@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="./css/zoom-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mon Alternance</title>
+
+  <style>
+    /* Style global pour tout le document */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Style commun à toutes les sections */
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 20px 0;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Animation "fadeInUp" */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2, h3 {
+      color: #D43F52;
+    }
+
+    /* Style pour les abbr avec data-title */
+    abbr[data-title] {
+      text-decoration: underline dotted;
+      cursor: help;
+      color: #b42e40;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    }
+
+    /* Tooltip personnalisé */
+    .abbr-tooltip {
+      position: absolute;
+      z-index: 100;
+      max-width: 300px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid #D43F52;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9em;
+      line-height: 1.4;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: none;
+    }
+
+    /* Cadres d'image */
+    .image-frame {
+      margin-top: 15px;
+      border: 2px solid #D43F52;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    /* Galerie images */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #D43F52;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-top: 4px;
+      margin-bottom: 15px;
+    }
+
+    /* Visionneuse plein écran */
+    #fullscreen-viewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Styles pour les cartes de projet */
+    .project-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #D43F52;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    /* Bouton de retour */
+    .back-arrow {
+      position: fixed;
+      bottom: 25px;
+      left: 20px;
+      width: 52px;
+      height: 52px;
+      background-color: #D43F52;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(212, 63, 82, 0.5);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-arrow:hover {
+      transform: scale(1.15);
+      background-color: #ff5f7f;
+    }
+
+    .back-arrow svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    .back-arrow::after {
+      content: "Retour";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: #fff;
+      background-color: #D43F52;
+      padding: 3px 8px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .back-arrow:hover::after {
+      opacity: 1;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      section {
+        padding: 15px;
+      }
+    }
+
+    li {
+      margin-left: 30px;
+    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  /* Liste personnalisée */
+  .custom-checklist {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .custom-checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  .custom-checklist li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #D43F52;
+  }
+
+  </style>
+
+</head>
+<body>
+  <!-- Bouton de retour -->
+  <a href="index.html#portfolio" class="back-arrow" title="Retour aux projets">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+    <span class="back-text">Retour</span>
+  </a>
+
+  <!-- Conteneur pour le tooltip -->
+  <div class="abbr-tooltip" id="abbr-tooltip"></div>
+
+<!-- Section d'introduction générale -->
+<section id="intro-alternance">
+  <h1>Mon Alternance chez Eviden</h1>
+  <p>
+    Depuis 2023, j'effectue mon alternance en tant que technicien en cybersécurité et administration système chez <strong>Eviden</strong>, une entité du groupe <strong>Worlgrid</strong>. Ce contrat de deux ans me permet de consolider mes connaissances théoriques et de les appliquer dans un cadre professionnel exigeant, tout en acquérant de nouvelles compétences sur le terrain.
+  </p>
+</section>
+
+<!-- Présentation de l'entreprise -->
+<section id="histoire-entreprise">
+  <h2>Contexte et évolution d'Atos vers Eviden</h2>
+  <p>
+    <strong>Atos</strong> est une entreprise française fondée en 1997 appartenant à l'entité Worldgrid. Atos est spécialisée dans les services numériques. En 2023, le groupe a été réorganisé en deux entités distinctes afin de mieux cibler leurs activités :
+    <strong>Atos</strong>, qui conserve les services informatiques classiques, et <strong>Eviden</strong>, qui se concentre sur les technologies innovantes.
+  </p>
+  <p>
+    <strong>Eviden</strong> est aujourd’hui positionnée sur des secteurs à fort potentiel technologique comme le <abbr data-title="Cloud Computing : Modèle informatique permettant un accès à la demande via un réseau à des ressources informatiques partagées.">cloud</abbr>, la cybersécurité, l’<abbr data-title="Intelligence Artificielle : Ensemble de théories et de techniques visant à réaliser des machines capables de simuler l'intelligence humaine.">intelligence artificielle (IA)</abbr> et le <abbr data-title="Calcul Haute Performance : Utilisation de supercalculateurs pour résoudre des problèmes complexes nécessitant une puissance de calcul importante.">calcul haute performance (HPC)</abbr>.
+  </p>
+</section>
+
+
+  <!-- Présentation du projet Stanway -->
+  <section id="presentation-stanway">
+    <h2>Le projet Stanway</h2>
+    <p><strong>Stanway</strong> est un projet visant à superviser et sécuriser les infrastructures réseau de <abbr data-title="Réseau de Transport d'Électricité — entreprise publique qui gère le réseau haute tension en France.">RTE</abbr>. Il s'agit d'une plateforme centralisée permettant de surveiller les équipements réseau, les serveurs et les applications critiques.</p>
+    <p>Mon rôle dans ce projet consiste à :</p>
+    <ul>
+      <li> ▫ Configurer et maintenir les outils de supervision comme <abbr data-title="Zabbix: Outil de supervision réseau open source permettant de surveiller divers paramètres des équipements réseau.">Zabbix</abbr></li>
+      <li> ▫ Analyser les alertes de sécurité avec <abbr data-title="Security Information and Event Management: Solution qui combine les fonctions de gestion des événements de sécurité et des informations de sécurité.">SIEM</abbr></li>
+      <li> ▫ Participer aux audits de sécurité en utilisant <abbr data-title="Nessus: Scanner de vulnérabilités développé par Tenable qui permet d'identifier les failles de sécurité dans les systèmes.">Nessus</abbr></li>
+      <li> ▫ Documenter les procédures et configurations dans <abbr data-title="Gestionnaire Libre de Parc Informatique: Solution open source de gestion de parc informatique et de helpdesk.">GLPI</abbr></li>
+    </ul>
+  </section>
+
+
+
+  
+  <!-- Missions principales -->
+  <section id="missions-principales">
+    <h2>Mes missions principales</h2>
+    <p>Mon alternance m’a permis de développer une solide expérience dans le domaine de l’administration systèmes et réseaux, à travers des missions concrètes et variées.</p>
+    <br/>
+    <p>J’ai participé à des opérations de maintenance et de support technique telles que :</p>
+    <div>
+    <ul>
+        <li> ✔ Réparation de postes informatiques et remplacement de composants matériels</li>
+        <li> ✔ Installation de postes utilisateurs à partir d’images système (déploiement complet)</li>
+        <li> ✔ Rackage de serveurs dans des baies de stockage et gestion des câblages</li>
+        <li> ✔ Configuration de pare-feux et d’équipements réseau selon les normes internes</li>
+        <li> ✔ Analyse de logs système et réseau, ainsi que de trames réseau via <abbr data-title="Outil d'analyse de protocoles réseau.">Wireshark</abbr></li>
+        <li> ✔ Réponse à des tickets d'incidents ou de demandes, en tenant compte des priorités</li>
+      </ul>
+    </div>
+      <br/>
+      <p>J’ai également travaillé sur des aspects plus automatisés et documentés de l’administration :</p>
+    <div>
+        <ul>
+          <li> ✔ Création et modification de scripts <abbr data-title="Langage de script pour les systèmes Unix.">Bash</abbr>, <abbr data-title="Langage de script pour les systèmes Windows.">PowerShell</abbr> et <abbr data-title="Langage de programmation polyvalent.">Python</abbr> (traitement de données, supervision, automatisation)</li>
+          <li> ✔ Mise à jour et configuration de logiciels métiers (ex. : solutions de sauvegarde)</li>
+          <li> ✔ Gestion du renouvellement de certificats <abbr data-title="Secure Sockets Layer: Protocole pour sécuriser les communications sur Internet.">SSL</abbr> et outils d’alerte associés</li>
+          <li> ✔ Rédaction de documentation technique claire pour assurer la transmission des connaissances</li>
+          <li> ✔ Participation à l'inventaire matériel et à la gestion du parc informatique</li>
+        </ul>
+    </div>
+    <br/><br/>
+
+
+  </section>
+
+
+  <!-- Missions principales (version épurée) -->
+  <section id="missions-principales">
+    <h2>Projets principaux</h2>
+
+    <div class="project-card">
+      <h3>Programmation & carte réseau</h3>
+      <p>
+        Chaque mois, Microsoft publie via son <abbr data-title="Microsoft Security Response Center">MSRC</abbr> des bulletins de sécurité, souvent dans un format brut (XML, JSON, HTML) peu lisible pour les administrateurs.
+      </p>
+      <p>
+        J’ai automatisé la récupération de ces rapports, leur extraction, puis leur conversion dans un fichier Excel structuré et coloré. Ce fichier permet aux équipes de suivre rapidement les vulnérabilités corrigées, sans devoir analyser manuellement les données.
+      </p>
+      <p>
+        En parallèle, j’ai redessiné la carte réseau Zabbix de l’entreprise, à l’aide d’Inkscape, selon un cahier des charges. Le nouveau schéma a ensuite été intégré à la plateforme de supervision pour en améliorer la lisibilité.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Gestion des certificats</h3>
+      <p>
+        Un enjeu majeur de mon alternance concernait la centralisation des éléments sensibles pouvant expirer : certificats, mots de passe, tokens, etc. Plus de 600 éléments étaient concernés, et leur suivi se faisait manuellement.
+      </p>
+      <p>
+        J’ai mené une étude comparative puis proposé <abbr data-title="Gestionnaire Libre de Parc Informatique">GLPI</abbr> comme solution. Après validation, j’ai réalisé son installation, sa configuration, et mis en place un système de notifications automatiques.
+      </p>
+      <p>
+        J’ai également développé un outil en <abbr data-title="Langage de programmation polyvalent.">Python</abbr> permettant de :
+        <ul>
+          <li> - recenser automatiquement les certificats présents sur la plateforme,</li>
+          <li> - mettre à jour ou ignorer selon leur état (valide ou expiré),</li>
+          <li> - générer des logs au format <abbr data-title="Système de journalisation standard pour les messages de log.">syslog</abbr> vers notre pile <abbr data-title="Elasticsearch, Logstash, Kibana">ELK</abbr>.</li>
+        </ul>
+      </p>
+      <p>
+        Ce projet m’a demandé plusieurs mois de travail, incluant tests, documentation et mise en production.
+      </p>
+    </div>
+
+    <div class="project-card">
+      <h3>Supervision réseau</h3>
+      <p>
+        Pour un client utilisant <abbr data-title="Outil de supervision de réseau open source.">Zabbix</abbr>, j’ai développé un outil qui interagit avec son <abbr data-title="Application Programming Interface: Interface permettant à différents logiciels de communiquer entre eux.">API</abbr> afin d’automatiser l’extraction de données.
+      </p>
+      <p>
+        À partir d’un fichier de configuration, le client peut définir des machines, groupes et éléments à surveiller. Mon script récupère alors les données, les filtre dans le temps, et les convertit automatiquement (booléens, entiers, etc.).
+      </p>
+      <p>
+        Le tout est exporté dans un fichier Excel, structuré, coloré et lisible, pour permettre au client d’exploiter facilement les résultats.
+      </p>
+    </div>
+  </section>
+
+
+  <!-- Environnement technique -->
+  <section id="technologies">
+    <h2>Environnement technique</h2>
+    <div class="tech-category">
+      <h3>Outils de sécurité</h3>
+      <ul>
+        <li> ▫ <abbr data-title="Network Mapper: Outil open source pour l'exploration de réseau et l'audit de sécurité.">Nmap</abbr> - Exploration réseau</li>
+        <li> ▫ <abbr data-title="Framework de test de pénétration: Outil open source pour développer et exécuter des exploits contre des cibles distantes.">Metasploit</abbr> - Exploitation</li>
+        <li> ▫ <abbr data-title="Suite de tests de sécurité web: Outil pour tester la sécurité des applications web.">Burpsuite</abbr> - Analyse web</li>
+        <li> ▫ <abbr data-title="Outil de supervision réseau: Solution open source de monitoring réseau.">Zabbix</abbr> - Supervision</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- Compétences développées -->
+  <section id="competences">
+    <h2>Compétences développées</h2>
+    <p>Cette expérience m'a permis de développer plusieurs compétences techniques et professionnelles :</p>
+    <ul class="custom-checklist">
+      <li> Configuration de <abbr data-title="Virtual Local Area Network: Technologie permettant de segmenter un réseau local en plusieurs réseaux virtuels.">VLAN</abbr> et gestion des <abbr data-title="Access Control List: Liste de contrôle d'accès définissant les permissions sur un réseau.">ACL</abbr></li>
+      <li> Déploiement de <abbr data-title="Group Policy Objects: Objets de stratégie de groupe dans Active Directory pour gérer les configurations des ordinateurs et utilisateurs.">GPO</abbr> sur Active Directory</li>
+      <li> Utilisation de <abbr data-title="PowerShell: Langage de script et shell développé par Microsoft pour l'administration système.">PowerShell</abbr> pour l'automatisation des tâches</li>
+      <li> Configuration de sauvegardes avec <abbr data-title="Veeam: Solution de sauvegarde et de réplication pour les environnements virtuels.">Veeam</abbr></li>
+    </ul>
+  </section>
+
+  <!-- Galerie -->
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <p>Quelques images supplémentaires liées au projet.</p>
+    <div class="gallery">
+      <div>
+        <img src="./images/glpi.png" alt="GLPI - Gestionnaire Libre de Parc Informatique" onclick="showFullscreen(this)">
+        <div class="gallery-caption">GLPI - Gestion d'inventaire</div>
+      </div>
+      <div>
+        <img src="./images/zabbix.png" alt="Zabbix - Outil de supervision réseau" onclick="showFullscreen(this)">
+        <div class="gallery-caption">Zabbix - Supervision réseau</div>
+      </div>
+      <div>
+        <img src="./images/pc1.jpg" alt="Desktop" onclick="showFullscreen(this)">
+      <div class="gallery-caption">Mon bureau en entreprise</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <div class="footer">
+    © 2025 - ROUZEAU ARTHUR | RZU-FOLIO
+  </div>
+
+  <!-- Visionneuse plein écran -->
+  <div id="fullscreen-viewer" style="display: none;">
+    <img src="" alt="" onclick="hideFullscreen()">
+  </div>
+
+ <!-- Script pour les abbr avec data-title -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const abbrs = document.querySelectorAll('abbr[data-title]');
+      const tooltip = document.getElementById('abbr-tooltip');
+
+      abbrs.forEach(abbr => {
+        abbr.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Récupérer les données
+          const title = this.getAttribute('data-title');
+          const rect = this.getBoundingClientRect();
+
+          // Positionner le tooltip
+          tooltip.style.display = 'block';
+          tooltip.style.left = `${rect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+          tooltip.innerHTML = title;
+
+          // Afficher le tooltip
+          setTimeout(() => {
+            tooltip.style.opacity = '1';
+          }, 10);
+
+          // Masquer le tooltip après un délai ou au clic ailleurs
+          const hideTooltip = () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+              tooltip.style.display = 'none';
+            }, 200);
+            document.removeEventListener('click', hideTooltip);
+          };
+
+          document.addEventListener('click', hideTooltip);
+        });
+      });
+    });
+
+    // Script pour la visionneuse plein écran
+    function showFullscreen(img) {
+      const viewer = document.createElement('div');
+      viewer.id = 'fullscreen-viewer';
+      viewer.style.position = 'fixed';
+      viewer.style.top = '0';
+      viewer.style.left = '0';
+      viewer.style.width = '100vw';
+      viewer.style.height = '100vh';
+      viewer.style.backgroundColor = 'rgba(0,0,0,0.95)';
+      viewer.style.display = 'flex';
+      viewer.style.justifyContent = 'center';
+      viewer.style.alignItems = 'center';
+      viewer.style.zIndex = '1000';
+      viewer.style.cursor = 'zoom-out';
+
+      const fullImg = document.createElement('img');
+      fullImg.src = img.src;
+      fullImg.style.maxWidth = '90%';
+      fullImg.style.maxHeight = '90%';
+      fullImg.style.border = '3px solid #D43F52';
+      fullImg.style.borderRadius = '10px';
+
+      const caption = document.createElement('div');
+      caption.textContent = img.alt;
+      caption.style.position = 'absolute';
+      caption.style.bottom = '30px';
+      caption.style.color = '#ccc';
+      caption.style.fontSize = '1.1rem';
+
+      viewer.appendChild(fullImg);
+      viewer.appendChild(caption);
+      document.body.appendChild(viewer);
+
+      // Fermer en cliquant
+      viewer.onclick = function() {
+        document.body.removeChild(viewer);
+      };
+
+      // Fermer avec la touche Echap
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.body.removeChild(viewer);
+        }
+      });
+    }
+
+    // Animation au scroll
+    const sections = document.querySelectorAll("section");
+    function showSectionOnScroll() {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          section.style.animationPlayState = "running";
+        }
+      });
+    }
+    window.addEventListener("scroll", showSectionOnScroll);
+    window.addEventListener("load", showSectionOnScroll);
+  </script>
+
+  <!-- Bouton de retour -->
+  <a href="index.html#portfolio" class="back-arrow" title="Retour aux projets">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </a>
+</body>
+</html>

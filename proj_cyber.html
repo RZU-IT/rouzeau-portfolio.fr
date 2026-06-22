@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="./css/zoom-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet - Réagir face à une cyberattaque</title>
+  <style>
+    /* Style global pour tout le document */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Style commun à toutes les sections */
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 20px 0;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Animation "fadeInUp" */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2, h3 {
+      color: #D43F52;
+    }
+
+    /* Style pour les abbr avec data-title */
+    abbr[data-title] {
+      text-decoration: underline dotted;
+      cursor: help;
+      color: #b42e40;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    }
+
+    /* Tooltip personnalisé */
+    .abbr-tooltip {
+      position: absolute;
+      z-index: 100;
+      max-width: 300px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid #D43F52;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9em;
+      line-height: 1.4;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: none;
+    }
+
+    /* Cadres d'image */
+    .image-frame {
+      margin-top: 15px;
+      border: 2px solid #D43F52;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    /* Galerie images */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #D43F52;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-top: 4px;
+      margin-bottom: 15px;
+    }
+
+    /* Visionneuse plein écran */
+    #fullscreen-viewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Styles pour les cartes de projet */
+    .project-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #D43F52;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    /* Bouton de retour */
+    .back-arrow {
+      position: fixed;
+      bottom: 25px;
+      left: 20px;
+      width: 52px;
+      height: 52px;
+      background-color: #D43F52;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(212, 63, 82, 0.5);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-arrow:hover {
+      transform: scale(1.15);
+      background-color: #ff5f7f;
+    }
+
+    .back-arrow svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    .back-arrow::after {
+      content: "Retour";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: #fff;
+      background-color: #D43F52;
+      padding: 3px 8px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .back-arrow:hover::after {
+      opacity: 1;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      section {
+        padding: 15px;
+      }
+    }
+
+    li {
+      margin-left: 30px;
+    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+
+      /* Liste personnalisée */
+    .custom-checklist {
+      list-style: none;
+      padding-left: 0;
+    }
+
+    .custom-checklist li {
+      position: relative;
+      padding-left: 30px;
+      margin-bottom: 10px;
+    }
+
+    .custom-checklist li:before {
+      content: "✓";
+      position: absolute;
+      left: 0;
+      color: #D43F52;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="abbr-tooltip" class="abbr-tooltip"></div>
+
+  <section id="intro">
+    <h1>Projet : Réagir face à une cyberattaque</h1>
+    <p>
+      Projet réalisé en fin d'année. L'objectif était de comprendre comment une attaque informatique est menée, avec quels outils et quelles méthodologies. Ce projet faisait suite à l'initiation à la cybersécurité réalisée en début d'année <a href="proj_init.html">Initialisation à la cybersécurité</a>.
+    </p>
+  </section>
+
+  <section id="objectifs">
+    <h2>Objectifs du projet</h2>
+    <ul>
+      <li> ▫ Comprendre les étapes d'une attaque : <strong>footprinting, exploitation, persistance</strong></li>
+      <li> ▫ Utiliser des <strong>outils réels</strong> de pentesting</li>
+      <li> ▫ Effectuer des <strong>recherches ciblées</strong> sur une personne (OSINT)</li>
+      <li> ▫ <strong>Explorer une faille récente</strong> : Log4j (analyse de code et exploitation)</li>
+      <li> ▫ Superviser les attaques et <strong>créer des alertes</strong> via ELK</li>
+      <li> ▫ Utiliser un <strong>panel personnalisé</strong> pour surveiller les tentatives d'intrusion</li>
+      <li> ▫ Configurer et utiliser <strong>Suricata</strong> et <strong>un serveur MISP</strong></li>
+    </ul>
+  </section>
+
+  <section id="deroulement">
+    <h2>Réalisation du projet</h2>
+    <p>Nous avons suivi un ensemble d'instructions techniques accompagné d'un questionnaire pour valider nos actions, et fournir des captures de preuve à l'enseignant. Voici les grandes étapes :</p>
+    <ul>
+      <li> ▫ <strong><abbr data-title="Footprinting: Collecte d'informations sur une cible pour préparer une attaque.">Footprinting</abbr></strong> : récupération d'informations sur une cible via LinkedIn et Internet</li>
+      <li> ▫ <strong>Première attaque réussie</strong> : connexion à une machine grâce à un mot de passe déduit</li>
+      <li> ▫ <strong>Exploration de <abbr data-title="Log4j: Vulnérabilité critique dans la bibliothèque de journalisation Log4j.">Log4j</abbr></strong> : exploitation de la faille, analyse du code et explication du fonctionnement</li>
+      <li> ▫ <strong>Utilisation de <abbr data-title="Framework pour le développement et l'exécution d'exploits contre des cibles distantes.">Metasploit</abbr></strong> : déploiement d'un malware et mise en place de la persistance</li>
+      <li> ▫ <strong>Utilisation avancée de <abbr data-title="Outil de test d'injection SQL pour détecter et exploiter les failles SQL.">SQLMap</abbr></strong> : attaques <abbr data-title="Structured Query Language: Langage de programmation conçu pour gérer des bases de données relationnelles.">SQL</abbr> via analyse de sites vulnérables</li>
+      <li> ▫ <strong>Intégration d'outils</strong> comme <abbr data-title="Suricata: Outil de détection d'intrusion réseau.">Suricata</abbr> pour la détection d'intrusions</li>
+      <li> ▫ <strong>Supervision avec <abbr data-title="Elasticsearch, Logstash, Kibana: Suite d'outils pour la recherche, l'analyse et la visualisation de données.">ELK</abbr></strong> : remontée d'alertes (comptes suspects, bruteforce, etc.) avec dashboard personnalisé</li>
+      <li> ▫ <strong>Création d'un serveur <abbr data-title="Malware Information Sharing Platform: Plateforme de partage d'informations sur les malwares.">MISP</abbr></strong> pour la gestion de la threat intelligence</li>
+    </ul>
+  </section>
+
+  <section id="competences">
+    <h2>Compétences développées</h2>
+    <ul class="custom-checklist">
+      <li>Réaliser une attaque informatique de façon encadrée</li>
+      <li>Utiliser Metasploit pour l'exploitation et la persistance</li>
+      <li>Exploiter des failles connues comme Log4j</li>
+      <li>Pratiquer l'OSINT sur des cibles publiques</li>
+      <li>Utiliser SQLMap,Suricata, ELK, MISP</li>
+      <li>Déployer un tableau de bord de supervision personnalisé</li>
+      <li>Comprendre les enjeux réels d'une attaque informatique</li>
+    </ul>
+  </section>
+
+  <section id="ressenti">
+    <h2>Ce que j'ai aimé</h2>
+    <p>Ce projet m'a permis de voir le <strong>côté offensif</strong> d'une attaque et surtout de comprendre comment on peut s'en protéger. C'était passionnant de <strong>mettre en pratique</strong> ce que nous avons vu dans les cours de sécurité. J'ai aimé le côté "jeu de piste" avec les recherches sur Internet, mais aussi la partie supervision et détection avec des outils avancés comme <strong>Suricata et MISP</strong>.</p>
+  </section>
+
+
+  <!-- Galerie d'images -->
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <p>Quelques images supplémentaires liées au projet.</p>
+
+    <div class="gallery">
+      <div>
+        <img src="./images/elk_cyber.png" alt="ELK CYBER" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">Panel ELK - supervision</div>
+      </div>
+      <div>
+        <img src="./images/log4j.jpeg" alt="LOG4J" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">Attaque Log4J - cyberattaque</div>
+      </div>
+      <div>
+        <img src="./images/misp.png" alt="MISP" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">MISP - partage d'indicateurs de compromission</div>
+      </div>
+    </div>
+  </section>
+
+  <div class="footer">
+    © 2025 - ROUZEAU ARTHUR | RZU-FOLIO
+  </div>
+
+  <!-- Visionneuse plein écran -->
+  <div id="fullscreen-viewer" style="display: none;">
+    <img src="" alt="" onclick="hideFullscreen()">
+  </div>
+
+ <!-- Script pour les abbr avec data-title -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const abbrs = document.querySelectorAll('abbr[data-title]');
+      const tooltip = document.getElementById('abbr-tooltip');
+
+      abbrs.forEach(abbr => {
+        abbr.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Récupérer les données
+          const title = this.getAttribute('data-title');
+          const rect = this.getBoundingClientRect();
+
+          // Positionner le tooltip
+          tooltip.style.display = 'block';
+          tooltip.style.left = `${rect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+          tooltip.innerHTML = title;
+
+          // Afficher le tooltip
+          setTimeout(() => {
+            tooltip.style.opacity = '1';
+          }, 10);
+
+          // Masquer le tooltip après un délai ou au clic ailleurs
+          const hideTooltip = () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+              tooltip.style.display = 'none';
+            }, 200);
+            document.removeEventListener('click', hideTooltip);
+          };
+
+          document.addEventListener('click', hideTooltip);
+        });
+      });
+    });
+
+    // Script pour la visionneuse plein écran
+    function showFullscreen(img) {
+      const viewer = document.createElement('div');
+      viewer.id = 'fullscreen-viewer';
+      viewer.style.position = 'fixed';
+      viewer.style.top = '0';
+      viewer.style.left = '0';
+      viewer.style.width = '100vw';
+      viewer.style.height = '100vh';
+      viewer.style.backgroundColor = 'rgba(0,0,0,0.95)';
+      viewer.style.display = 'flex';
+      viewer.style.justifyContent = 'center';
+      viewer.style.alignItems = 'center';
+      viewer.style.zIndex = '1000';
+      viewer.style.cursor = 'zoom-out';
+
+      const fullImg = document.createElement('img');
+      fullImg.src = img.src;
+      fullImg.style.maxWidth = '90%';
+      fullImg.style.maxHeight = '90%';
+      fullImg.style.border = '3px solid #D43F52';
+      fullImg.style.borderRadius = '10px';
+
+      const caption = document.createElement('div');
+      caption.textContent = img.alt;
+      caption.style.position = 'absolute';
+      caption.style.bottom = '30px';
+      caption.style.color = '#ccc';
+      caption.style.fontSize = '1.1rem';
+
+      viewer.appendChild(fullImg);
+      viewer.appendChild(caption);
+      document.body.appendChild(viewer);
+
+      // Fermer en cliquant
+      viewer.onclick = function() {
+        document.body.removeChild(viewer);
+      };
+
+      // Fermer avec la touche Echap
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.body.removeChild(viewer);
+        }
+      });
+    }
+
+    // Animation au scroll
+    const sections = document.querySelectorAll("section");
+    function showSectionOnScroll() {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          section.style.animationPlayState = "running";
+        }
+      });
+    }
+    window.addEventListener("scroll", showSectionOnScroll);
+    window.addEventListener("load", showSectionOnScroll);
+  </script>
+
+  <!-- Bouton de retour -->
+  <a href="index.html#portfolio" class="back-arrow" title="Retour aux projets">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </a>
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <link rel="stylesheet" href="./css/zoom-style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet - Initialisation à la cybersécurité</title>
+  <style>
+    /* Style global pour tout le document */
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Arial', sans-serif;
+    }
+
+    body {
+      background: #121212;
+      color: #ffffff;
+      line-height: 1.6;
+      padding: 20px;
+    }
+
+    /* Style commun à toutes les sections */
+    section {
+      background: rgba(255, 255, 255, 0.05);
+      margin: 20px 0;
+      padding: 25px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
+    }
+
+    /* Animation "fadeInUp" */
+    @keyframes fadeInUp {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    h1, h2, h3 {
+      color: #D43F52;
+    }
+
+    /* Style pour les abbr avec data-title */
+    abbr[data-title] {
+      text-decoration: underline dotted;
+      cursor: help;
+      color: #b42e40;
+      border-bottom: 1px dotted rgba(255, 255, 255, 0.5);
+    }
+
+    /* Tooltip personnalisé */
+    .abbr-tooltip {
+      position: absolute;
+      z-index: 100;
+      max-width: 300px;
+      padding: 10px;
+      background: rgba(0, 0, 0, 0.9);
+      border: 1px solid #D43F52;
+      border-radius: 5px;
+      color: #fff;
+      font-size: 0.9em;
+      line-height: 1.4;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+      pointer-events: none;
+      opacity: 0;
+      transition: opacity 0.2s;
+      display: none;
+    }
+
+    /* Cadres d'image */
+    .image-frame {
+      margin-top: 15px;
+      border: 2px solid #D43F52;
+      border-radius: 10px;
+      overflow: hidden;
+      max-width: 100%;
+    }
+
+    /* Galerie images */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      gap: 15px;
+      margin-top: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      border: 2px solid #D43F52;
+      cursor: pointer;
+      transition: transform 0.2s ease;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.03);
+    }
+
+    .gallery-caption {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #aaa;
+      margin-top: 4px;
+      margin-bottom: 15px;
+    }
+
+    /* Visionneuse plein écran */
+    #fullscreen-viewer {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0,0,0,0.95);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    /* Styles pour les cartes de projet */
+    .project-card {
+      background: rgba(255, 255, 255, 0.08);
+      border-left: 3px solid #D43F52;
+      padding: 15px;
+      margin-bottom: 20px;
+      border-radius: 5px;
+    }
+
+    /* Bouton de retour */
+    /* Bouton de retour */
+    .back-arrow {
+      position: fixed;
+      bottom: 25px;
+      left: 20px;
+      width: 52px;
+      height: 52px;
+      background-color: #D43F52;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      box-shadow: 0 0 10px rgba(212, 63, 82, 0.5);
+      transition: transform 0.3s ease, background-color 0.3s ease;
+      z-index: 999;
+    }
+
+    .back-arrow:hover {
+      transform: scale(1.15);
+      background-color: #ff5f7f;
+    }
+
+    .back-arrow svg {
+      width: 22px;
+      height: 22px;
+      fill: white;
+    }
+
+    .back-arrow::after {
+      content: "Retour";
+      position: absolute;
+      top: -25px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 0.75rem;
+      color: #fff;
+      background-color: #D43F52;
+      padding: 3px 8px;
+      border-radius: 5px;
+      opacity: 0;
+      transition: opacity 0.3s;
+      pointer-events: none;
+    }
+
+    .back-arrow:hover::after {
+      opacity: 1;
+    }
+
+    /* Footer */
+    .footer {
+      text-align: center;
+      font-size: 0.9em;
+      color: #888;
+      margin-top: 40px;
+      padding: 20px 0;
+    }
+
+    /* Responsive */
+    @media (max-width: 600px) {
+      section {
+        padding: 15px;
+      }
+    }
+
+    li {
+      margin-left: 30px;
+    }
+  ul {
+    list-style: none;
+    padding-left: 0;
+    margin-left: 0;
+  }
+  /* Liste personnalisée */
+  .custom-checklist {
+    list-style: none;
+    padding-left: 0;
+  }
+
+  .custom-checklist li {
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 10px;
+  }
+
+  .custom-checklist li:before {
+    content: "✓";
+    position: absolute;
+    left: 0;
+    color: #D43F52;
+  }
+  </style>
+</head>
+<body>
+  <div id="abbr-tooltip" class="abbr-tooltip"></div>
+
+  <!-- Visionneuse plein écran -->
+  <div id="fullscreen-viewer" onclick="hideFullscreen()">
+    <img src="" alt="Image en plein écran" />
+  </div>
+
+  <!-- Section d'introduction -->
+  <section id="intro">
+    <h1>Projet : Initialisation à la <abbr data-title="Cybersécurité: Ensemble des techniques pour protéger les systèmes, réseaux et données contre les attaques numériques.">cybersécurité</abbr></h1>
+    <p>
+      Ce projet avait pour objectif de nous initier aux bases de la cybersécurité, en combinant une approche théorique et pratique. Il s'inscrivait dans un projet nous permettant d'explorer des outils utilisés par les professionnels, tout en travaillant de manière autonome et collaborative.
+    </p>
+  </section>
+
+  <!-- Présentation du projet -->
+  <section id="presentation">
+    <h2>Présentation</h2>
+    <p>
+      Durant les séances, nous avons alterné entre des apports théoriques (culture générale, études de cas comme WannaCry ou EternalBlue) et des mises en pratique concrètes.
+    </p>
+    <p>
+      Nous avons manipulé plusieurs outils de sécurité :
+    </p>
+    <ul>
+      <li> ▫ <strong>Nmap</strong> : pour le scan réseau</li>
+      <li> ▫ <strong>SQLMap</strong> : pour tester des injections SQL sur des bases de données</li>
+      <li> ▫ <strong>Nikto</strong> : exploré via un quiz, m'a permis de découvrir des types de scans automatisés</li>
+      <li> ▫ <strong>ExploitDB</strong> : base de données d'anciennes vulnérabilités que j'ai consultée pour comprendre comment certaines attaques sont possibles si les systèmes ne sont pas à jour</li>
+    </ul>
+  </section>
+
+  <!-- Liste des outils utilisés -->
+  <section id="outils">
+    <h2>Outils et technologies</h2>
+    <h3>Logiciels</h3>
+    <ul>
+      <li> ▫ <abbr data-title="Network Mapper: Outil d'exploration réseau et de scan de sécurité.">Nmap</abbr></li>
+      <li> ▫ <abbr data-title="Outil de test d'injection SQL pour détecter et exploiter les failles SQL.">SQLMap</abbr></li>
+      <li> ▫ <abbr data-title="Framework pour le développement et l'exécution d'exploits contre des cibles distantes.">Metasploit</abbr></li>
+      <li> ▫ <abbr data-title="Suite d'outils pour effectuer des tests de sécurité des applications web.">Burpsuite</abbr></li>
+      <li> ▫ <abbr data-title="Scanner de vulnérabilités pour les serveurs web.">Nikto</abbr></li>
+      <li> ▫ <abbr data-title="Outil de test de sécurité des applications web.">SkipFish</abbr></li>
+      <li> ▫ <abbr data-title="Framework de test de pénétration.">Jok3r</abbr></li>
+      <li> ▫ <abbr data-title="Outil de brute force pour les répertoires et fichiers web.">dirbuster</abbr></li>
+      <li> ▫ <abbr data-title="Scanner de vulnérabilités pour les sites WordPress.">WPScan</abbr></li>
+      <li> ▫ <abbr data-title="Outils de brute force pour les mots de passe.">Hydra & Medusa</abbr></li>
+      <li> ▫ <abbr data-title="Bibliothèque de cryptographie open source.">OpenSSL</abbr></li>
+      <li> ▫ <abbr data-title="Exploit Database: Base de données d'exploits connus.">Exploit DB</abbr></li>
+    </ul>
+
+    <h3>Failles étudiées</h3>
+    <ul>
+      <li> ▫ <abbr data-title="Vulnérabilité dans le protocole SMB de Microsoft Windows.">EthernalBlue</abbr></li>
+      <li> ▫ <abbr data-title="Ransomware exploitant la vulnérabilité EternalBlue.">WannaCry</abbr></li>
+    </ul>
+
+    <h3>Langages</h3>
+    <ul>
+      <li> ▫ <abbr data-title="Langage de programmation polyvalent.">Python</abbr> & <abbr data-title="Langage de script orienté objet.">Ruby</abbr></li>
+      <li> ▫ <abbr data-title="Langage de script pour les systèmes Unix.">Bash</abbr></li>
+      <li> ▫ <abbr data-title="Langage de script pour les systèmes Windows.">PowerShell</abbr></li>
+    </ul>
+  </section>
+
+  <!-- Description du déroulement du projet -->
+  <section id="projet">
+    <h2>Déroulement du projet</h2>
+    <p>Le projet faisait suite à des cours de <abbr data-title="Cybersécurité: Ensemble des techniques pour protéger les systèmes, réseaux et données contre les attaques numériques.">cybersécurité</abbr> et de <abbr data-title="Cryptographie: Science des techniques pour sécuriser les communications.">cryptographie</abbr> que nous avons suivis. Durant les heures dédiées au projet, nous devions lire des documents, rechercher des informations sur des sites internet officiels, puis répondre à différents quiz portant sur des thèmes variés à partir des informations trouvées.<br/><br/></p>
+    <p>Nous avons exploré l'utilisation de différents logiciels tels que Nmap pour scanner des réseaux, Legion pour scanner et exploiter les réseaux, Burpsuite pour maîtriser les sites web, et Metasploit qui permet de générer des virus informatiques.<br/><br/></p>
+    <p>Durant les séances, nous avons eu l'occasion d'élargir notre culture informatique en apprenant des dates importantes ou en étudiant des logiciels tels que WannaCry et EternalBlue.</p>
+  </section>
+
+  <!-- Compétences développées -->
+  <section id="competences">
+    <h2>Compétences développées</h2>
+    <ul class="custom-checklist">
+      <li>Initiation aux principes fondamentaux de la cybersécurité</li>
+      <li>Utilisation d'outils de test et d'analyse comme Nmap, Nikto, SQLMap, Metasploit</li>
+      <li>Recherche d'informations techniques sur des sources fiables</li>
+      <li>Compréhension et exploitation de failles de sécurité simples</li>
+      <li>Gestion de projets en autonomie à travers des quiz progressifs</li>
+      <li>Esprit d'analyse</li>
+    </ul>
+  </section>
+
+  <!-- Retour personnel sur l'expérience -->
+  <section id="appréciation">
+    <h2>Ce que j'ai apprécié</h2>
+    <p>
+      Ce projet était réellement enrichissant. J'ai particulièrement apprécié la phase d'exploitation et d'analyse des vulnérabilités, qui nous plaçait dans une posture proche de cas réels.
+    </p>
+    <p>
+      J'ai été motivé au point de refaire certains exercices chez moi, en autonomie, en réutilisant des outils comme SQLMap et Nmap.
+    </p>
+    <p>
+      Les quiz ont également été une bonne manière de suivre notre progression tout en favorisant l'entraide dans le groupe. Cela m'a permis de consolider mes acquis et de mieux comprendre certaines notions.
+    </p>
+  </section>
+
+  <!-- Galerie d'images -->
+  <section id="galerie">
+    <h2>Galerie</h2>
+    <p>Quelques images supplémentaires liées au projet.</p>
+
+    <div class="gallery">
+      <div>
+        <img src="./images/sqlmap.png" alt="SQLMap" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">Injection SQL</div>
+      </div>
+      <div>
+        <img src="./images/nmap-fast-scan.png" alt="Nmap" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">Scan réseau</div>
+      </div>
+      <div>
+        <img src="./images/metasploit.png" alt="Metasploit" onclick="showFullscreen(this)" />
+        <div class="gallery-caption">Exploitation</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pied de page -->
+  <div class="footer">
+    © 2025 - ROUZEAU ARTHUR | RZU-FOLIO
+  </div>
+
+  <!-- Visionneuse plein écran -->
+  <div id="fullscreen-viewer" style="display: none;">
+    <img src="" alt="" onclick="hideFullscreen()">
+  </div>
+
+ <!-- Script pour les abbr avec data-title -->
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const abbrs = document.querySelectorAll('abbr[data-title]');
+      const tooltip = document.getElementById('abbr-tooltip');
+
+      abbrs.forEach(abbr => {
+        abbr.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          // Récupérer les données
+          const title = this.getAttribute('data-title');
+          const rect = this.getBoundingClientRect();
+
+          // Positionner le tooltip
+          tooltip.style.display = 'block';
+          tooltip.style.left = `${rect.left + window.scrollX}px`;
+          tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+          tooltip.innerHTML = title;
+
+          // Afficher le tooltip
+          setTimeout(() => {
+            tooltip.style.opacity = '1';
+          }, 10);
+
+          // Masquer le tooltip après un délai ou au clic ailleurs
+          const hideTooltip = () => {
+            tooltip.style.opacity = '0';
+            setTimeout(() => {
+              tooltip.style.display = 'none';
+            }, 200);
+            document.removeEventListener('click', hideTooltip);
+          };
+
+          document.addEventListener('click', hideTooltip);
+        });
+      });
+    });
+
+    // Script pour la visionneuse plein écran
+    function showFullscreen(img) {
+      const viewer = document.createElement('div');
+      viewer.id = 'fullscreen-viewer';
+      viewer.style.position = 'fixed';
+      viewer.style.top = '0';
+      viewer.style.left = '0';
+      viewer.style.width = '100vw';
+      viewer.style.height = '100vh';
+      viewer.style.backgroundColor = 'rgba(0,0,0,0.95)';
+      viewer.style.display = 'flex';
+      viewer.style.justifyContent = 'center';
+      viewer.style.alignItems = 'center';
+      viewer.style.zIndex = '1000';
+      viewer.style.cursor = 'zoom-out';
+
+      const fullImg = document.createElement('img');
+      fullImg.src = img.src;
+      fullImg.style.maxWidth = '90%';
+      fullImg.style.maxHeight = '90%';
+      fullImg.style.border = '3px solid #D43F52';
+      fullImg.style.borderRadius = '10px';
+
+      const caption = document.createElement('div');
+      caption.textContent = img.alt;
+      caption.style.position = 'absolute';
+      caption.style.bottom = '30px';
+      caption.style.color = '#ccc';
+      caption.style.fontSize = '1.1rem';
+
+      viewer.appendChild(fullImg);
+      viewer.appendChild(caption);
+      document.body.appendChild(viewer);
+
+      // Fermer en cliquant
+      viewer.onclick = function() {
+        document.body.removeChild(viewer);
+      };
+
+      // Fermer avec la touche Echap
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          document.body.removeChild(viewer);
+        }
+      });
+    }
+
+    // Animation au scroll
+    const sections = document.querySelectorAll("section");
+    function showSectionOnScroll() {
+      sections.forEach(section => {
+        const rect = section.getBoundingClientRect();
+        if (rect.top < window.innerHeight - 50) {
+          section.style.animationPlayState = "running";
+        }
+      });
+    }
+    window.addEventListener("scroll", showSectionOnScroll);
+    window.addEventListener("load", showSectionOnScroll);
+  </script>
+
+  <!-- Bouton de retour -->
+  <a href="index.html#portfolio" class="back-arrow" title="Retour aux projets">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+      <path d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"/>
+    </svg>
+  </a>
+</body>
+</html>
+

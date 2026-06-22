@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="utf-8">
+    <title>Rouzeau Arthur | RZU Folio</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="author" content="rzu">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#000000">
+
+    <!-- bootstrap -->
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <!-- font-awesome -->
+    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <!-- google font -->
+    <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,700,800" rel="stylesheet">
+    <!-- rzu_folio -->
+    <!--<link rel="stylesheet" href="css/rzu_folio.css">-->
+    
+    <!-- rzu_folio min -->
+    <link rel="stylesheet" href="css/rzu_folio_min.css">
+    <link rel="stylesheet" href="css/rzu_mobile.css" media="(hover: none) and (pointer: coarse)">
+
+    <style>
+        /* Réduit l'espace vertical globalement */
+        .section {
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        /* Remonte légèrement les titres */
+        .section h2 {
+            margin-top: -60px;
+            margin-bottom: 25px;
+            font-size: 32px;
+        }
+
+        /* Corrige le padding uniquement sur la section d'accueil */
+        #home .container {
+            padding-top: 100px;
+            padding-bottom: 40px;
+        }
+
+        #about.section,
+        #portfolio.section {
+            padding-bottom: 0 !important;
+            margin-bottom: 0 !important;
+        }
+
+        /* Vos autres styles CSS */
+        .section {
+            padding-top: 40px;
+            padding-bottom: 30px;
+        }
+
+        /* Styles pour gérer l'affichage des éléments .rotate et .static-tt */
+        .rotate {
+            display: block !important;
+        }
+
+        .static-tt {
+            display: none !important;
+        }
+
+        @media (hover: none) and (pointer: coarse) {
+            .rotate {
+                display: none !important;
+            }
+
+            .static-tt {
+                display: block !important;
+            }
+        }
+        @media screen and (max-width: 768px) {
+            .portfolio-thumb .portfolio-overlay {
+                opacity: 0.9 !important;
+                display: flex !important;
+                transform: none !important;
+                pointer-events: auto !important;
+                align-items: center !important;
+                justify-content: center !important;
+                padding: 10px;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                width: 100%;
+                height: 100%;
+                box-sizing: border-box;
+                border-radius: 8px;
+                background-color: rgba(212, 63, 82, 0.8) !important;
+            }
+
+            .portfolio-thumb .portfolio-overlay h4,
+            .portfolio-thumb .portfolio-overlay h5 {
+                color: #fff;
+                text-align: center;
+                margin: 6px 0;
+                padding: 4px;
+                line-height: 1.3;
+            }
+        }
+        @media screen and (max-width: 768px), (hover: none) and (pointer: coarse) {
+        #home {
+            background-image: url('images/home-bg.png');
+            background-position: center center !important;
+            background-repeat: no-repeat !important;
+            background-size: cover !important;
+            background-attachment: scroll !important;
+            transform: none !important;
+            will-change: auto !important;
+        }
+        }
+    </style>
+</head>
+<body>
+
+
+    <!-- Navigation -->
+    <div class="nav-indicators">
+        <a href="#home" class="nav-link" title="Accueil"></a>
+        <a href="#about" class="nav-link" title="Compétences"></a>
+        <a href="#portfolio" class="nav-link" title="Projets"></a>
+        <a href="#zoom" class="nav-link" title="Expériences"></a>
+        <a href="#work" class="nav-link" title="Passions"></a>
+        <a href="#passions" class="nav-link" title="Activité"></a>
+        <a href="#bilan" class="nav-link" title="Passions"></a>
+    </div>
+
+    <div id="fullpage">
+        <!-- start home -->
+        <div id="home" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-2"></div>
+                    <div class="col-md-8 wow fadeIn" data-wow-delay="0.9s">
+                        <h3>Mon Portfolio..</h3>
+                        <h1>Rouzeau Arthur</h1>
+
+                        <h3 class="rotate">RÉSEAUX & SYSTÈMES, DÉVELOPPEMENT & ANALYSE, CYBERSÉCURITÉ & RECHERCHE, SKATEBOARD & MAGIE</h3>
+                        <h3 class="static-tt">RÉSEAUX & SYSTÈMES, DÉVELOPPEMENT & ANALYSE, CYBERSÉCURITÉ & RECHERCHE, SKATEBOARD & MAGIE</h3>
+
+                        <p style="color: white; background-color: rgba(0, 0, 0, 0.5);">Passionné principalement par la magie et l'informatique.
+                        <br>Deux mondes d'apparence très éloignés, mais pourtant bien plus proches que l'on ne le pense.
+                        <br>Ce sont deux univers très différents de notre monde. Deux univers remplis de mystères.
+                        <br>Mon but dans la vie est de faire en sorte que mes deux passions
+                        <br>deviennent des univers qui n'aient plus aucun secret pour moi.</p>
+                        <a href="cv.html" class="btn btn-default smoothScroll wow fadeInUp"  style="background-color: #D43F52;" data-wow-delay="1s">MON CV</a>
+                    </div>
+                    <div class="col-md-2"></div>
+                </div>
+            </div>
+        </div>
+        <!-- end home -->
+
+        <!-- ======= SECTION COMPÉTENCES ======= -->
+        <div id="about" class="section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <h2>COMPÉTENCES</h2>
+                    </div>
+                </div>
+                <div class="row reverse-on-mobile">
+                    <div class="col-md-6 block-presentation">
+                        <p>Depuis le collège, je me suis intéressé à l'informatique en suivant des cours de programmation. J’ai effectué un stage chez Novaxium, où j’ai conçu des interfaces graphiques pour des automates industriels, ce qui m’a permis de découvrir le lien entre le code et les systèmes physiques.<br><br>
+                            Au lycée, j’ai choisi les spécialités NSI et Mathématiques. J’y ai approfondi mes connaissances en programmation, réseaux, bases de données, cryptographie, ainsi qu’en droit informatique et cybersécurité.<br><br>
+                            En parallèle, j’ai également suivi des cours de SES, où j’ai étudié les enjeux juridiques et sociaux liés à l’informatique : respect de la vie privée, limites légales, régulations numériques et cybersécurité.<br><br>
+                            Par la suite, j’ai travaillé chez PFO, où j’ai participé à l’installation et au raccordement de la fibre optique, ce qui m’a donné une première expérience terrain dans les télécoms.<br><br>
+                            Enfin, j’ai réalisé deux ans d’alternance chez Atos en tant qu’administrateur systèmes et réseaux. Cette expérience m’a permis de toucher à de nombreux domaines : réparation, tests, maintenance, supervision, analyse de logs, création de plans réseaux, et bien d'autres. J’ai développé une vraie polyvalence et une capacité à intervenir sur l’ensemble du système d’information.<br><br>
+                        </p>
+                    </div>
+                    <div class="col-md-6 block-techniques">
+                        <h3 class="techniques-title fade-in-up">TECHNIQUES</h3>
+                        <span>Réseaux & protocoles <small>95%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" style="width: 95%;"></div>
+                        </div>
+                        <span>Linux (serveurs/systèmes) <small>90%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" style="width: 90%;"></div>
+                        </div>
+                        <span>Python / Bash / PowerShell / Ruby <small>85%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" style="width: 85%;"></div>
+                        </div>
+                        <span>Supervision (Zabbix, ELK) <small>85%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" style="width: 85%;"></div>
+                        </div>
+                        <span>SQL (PostgreSQL, SQLite) <small>75%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                        <span>Conteneurisation (Docker) <small>75%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 75%;"></div>
+                        </div>
+                        <span>Outils Admin (GLPI, OpenSSL, Git..) <small>85%</small></span>
+                        <div class="progress">
+                            <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100" style="width: 85%;"></div>
+                        </div>
+                        <p style="margin-top: 20px;">
+                            <a href="cv.html" class="btn btn-default">
+                                Voir toutes mes compétences
+                            </a>
+                        </p>
+                    </div>
+                    <br/><br/>
+                    <div class="col-md-12 soft-skills my-soft-skill">
+                        <h3 class="soft-skills-title fade-in-up">SOFT SKILLS</h3>
+                        <ul>
+                            <li>Autonomie</li>
+                            <li>Curiosité technique</li>
+                            <li>Esprit d’équipe</li>
+                            <li>Capacité d’analyse</li>
+                            <li>Ponctualité</li>
+                            <li>Motivation</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br/>
+        </div>
+        <!-- =======END SECTION COMPÉTENCES ======= -->
+
+        <!-- start portfolio -->
+        <div id="portfolio" class="section slide-in-right animated">
+            <div class="container">
+                <div class="row">
+                    <h2>PROJETS UNIVERSITAIRES</h2>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.2s">
+                        <a href="proj_net.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/router.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>Réseaux :</h4>
+                                    <h5>S'initier aux réseaux informatiques</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.3s">
+                        <a href="proj_prog.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/prog.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>Programmation :</h4>
+                                    <h5>Traitement de données</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.4s">
+                        <a href="proj_init.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/hacked.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>PENTEST :</h4>
+                                    <h5>Initialisation à la cybersécurité</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.5s">
+                        <a href="proj_cyber.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/world.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>CYBERATTAQUE & CYBERDÉFENSE :</h4>
+                                    <h5>Réagir face à une cyberattaque</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.6s">
+                        <a href="proj_arch.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/arch.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>ARCHITECTURE RÉSEAU :</h4>
+                                    <h5>Supervision et sécurisation</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-6 col-xs-12 wow fadeIn" data-wow-delay="0.7s">
+                        <a href="proj_java.html">
+                            <div class="portfolio-thumb">
+                                <img src="images/java.png" class="img-responsive" alt="portfolio img">
+                                <div class="portfolio-overlay">
+                                    <h4>JAVA : </h4>
+                                    <h5>Messagerie Instantanée</h5>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+
+
+                <!-- ALTERNANCE -->
+
+                    <div class="row">
+                    <div class="col-md-12 col-xs-12 wow fadeIn" data-wow-delay="0.8s">
+                        <a href="proj_alt.html" style="text-decoration: none;">
+                            <div class="portfolio-thumb portfolio-alt-card">
+                                <h3 style="color: #FF6B6B; margin-bottom: 15px; font-size: 2rem;">ALTERNANCE</h3>
+                                <p style="color: #ccc; font-size: 1.5rem; margin-bottom: 25px;">
+                                    Découvre mon expérience professionnelle chez Eviden
+                                </p>
+                                <button class="alt-btn" style="font-size: small;">
+                                    Voir le projet Alternance
+                                </button>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <style>
+                    .portfolio-alt-card {
+                        text-align: center;
+                        padding: 40px 25px;
+                        background: rgba(255, 255, 255, 0.05);
+                        border-radius: 12px;
+                        border: 2px solid #FF6B6B;
+                        transition: opacity 0.4s ease, transform 0.4s ease;
+                        will-change: transform;
+                    }
+
+                    .portfolio-alt-card:hover {
+                        opacity: 0.85;
+                        transform: scale(1.03) translateY(-5px);
+                    }
+
+                    .alt-btn {
+                        background-color: #D43F52;
+                        color: white;
+                        border: none;
+                        border-radius: 30px;
+                        padding: 14px 32px;
+                        font-size: 1rem;
+                        cursor: pointer;
+                        opacity: 1;
+                        outline: none;
+                        transition: transform 0.3s ease, box-shadow 0.3s ease;
+                    }
+
+                    .alt-btn:focus {
+                        outline: none;
+                    }
+
+                    .portfolio-alt-card:hover .alt-btn {
+                        transform: scale(1.05);
+                        box-shadow: 0 6px 16px rgba(212, 63, 82, 0.4);
+                    }
+                </style>
+
+
+
+                </div>
+            </div>
+        </div>
+        <!-- END PORTFOLIO-->
+
+        <!-- ZOOM SUR -->
+        <div id="zoom" class="section">
+        <div class="container">
+            <div class="row">
+            <!-- Bloc gauche -->
+            <div class="col-md-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.9s">
+                <h2 style="margin-top: 0.1px;">ZOOM SUR DEUX EXPÉRIENCES</h2>
+                <h3>🔌 Raccordeur fibre optique</h3>
+                <p>
+                <strong>Câblage – Installation – Raccordement</strong><br>
+                <strong>Intervention sur le terrain</strong> chez un auto-entrepreneur à Brignais (38), pour installer et raccorder
+                des réseaux fibre optique.<br><br>
+                Ce travail exigeait de <strong>respecter des normes strictes</strong> et de manipuler des composants très sensibles
+                <strong>pour ne pas casser la fibre</strong>. J’ai trié les <strong>fibres optiques</strong> et utilisé des
+                <strong>cassettes de lovage</strong> pour les organiser, en veillant à respecter les <strong>rayons de courbure</strong>
+                et à travailler avec <strong>minutie</strong> pour garantir une installation propre et conforme aux normes.
+                </p>
+                <br/>
+                <br/>
+                <h4>Ce que j’ai appris :</h4>
+                <ul>
+                <li>Être minutieux et respecter les normes de sécurité sur le terrain.</li>
+                <li>Gérer les imprévus sur le terrain tout en gardant une qualité de travail.</li>
+                <li>Respecter des standards en matière de sécurité et de câblage.</li>
+                </ul>
+            </div>
+            <br/><br/><br/><br/>
+            <!-- Bloc droit -->
+            <div class="col-md-6 col-xs-12 wow fadeInRight" data-wow-delay="0.9s">
+                <h3>🧠 Concepteur d’IHM pour automates</h3>
+                <p>
+                Au sein d'une entreprise spécialisée en automatisation industrielle à Lyon (38), j'ai participé à la création
+                d'<strong>interfaces graphiques mobiles</strong> pour piloter des automates de cuves à vin.
+                </p>
+                <p>
+                Ce stage m’a confronté à une problématique concrète : comment concevoir une interface
+                <strong>intuitive, esthétique et fonctionnelle</strong>, tout en respectant les besoins techniques du client final.
+                Le projet a évolué au fil des demandes, m’obligeant à ajuster l’UX /
+                UI en temps réel.
+                </p>
+                <br/>
+                <br/><br/>
+                <h4>Ce que j’ai appris :</h4>
+                <ul>
+                <li>Créer des interfaces utilisateurs pour des environnements industriels.</li>
+                <li>Traduire des exigences fonctionnelles en solutions visuelles concrètes.</li>
+                <li>Communiquer avec une équipe projet pour gérer les changements.</li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!--END ZOOM SUR -->
+
+        <!-- start work -->
+        <!-- PART I -->
+        <div id="work" class="section" style="background: #1a1a1a;">
+            <div class="container">
+                <div class="row">
+                    <h2>MES PASSIONS</h2>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-server"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Hébergement de serveurs de jeux</h3>
+                                <p>
+                                    Déploiement de serveurs Minecraft et Rust sur VPS et machines locales.
+                                    <br>Configuration de réseaux, pare-feux, automatisation de sauvegardes et gestion de performances
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-link"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Cluster Raspberry Pi & VLAN personnel</h3>
+                                <p>
+                                    Montage d’un mini-cluster pour tests réseaux et auto-hébergement.
+                                    <br>Configuration de VLANs, routage personnalisé, DNS local.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-linux"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Tests de distributions Linux</h3>
+                                <p>
+                                    Exploration de systèmes comme Arch, Kali, Fedora, Debian..
+                                    <br>Tests de leurs fonctionnalités, performances, gestion des paquets et ergonomie.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- PART II -->
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-wrench"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Reconditionnement de PC</h3>
+                                <p>
+                                    Dépoussiérage, remplacement de pièces et installation de Linux léger.
+                                    <br>Optimisation mémoire, démarrage rapide, recyclage.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-code-fork"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">Veille open source</h3>
+                                <p>
+                                    Tests d’outils comme Jellyfin, Portainer, Gitea...
+                                    <br>Déploiement local ou conteneurisation (Docker), contributions open source.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4 col-xs-11 wow fadeInUp" data-wow-delay="0.6s">
+                        <div class="media">
+                            <div class="media-object media-left">
+                                <i class="fa fa-shield"></i>
+                            </div>
+                            <div class="media-body">
+                                <h3 class="media-heading">VulnHub / TryHackMe</h3>
+                                <p>
+                                    Participation à des challenges pour améliorer ma cybersécurité offensive/défensive.
+                                    <br>Exploitations, scripts, renforcement de systèmes isolés.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end work -->
+
+        <!-- start passions -->
+        <div id="passions" class="section" style="color: white; padding: 20px;">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        
+                        <p style="font-size: xx-large;"><strong></strong></p>
+                        <br/><br/>
+                        <h2>MES ACTIVITÉS</h2>
+                        <p>
+                            En plus de l'informatique, j'ai deux grandes activités que je pratique : la magie et le skateboard.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h3>Skateboard</h3>
+                        <p>
+                            J'adore sortir dehors pour faire des figures sur mon skate ou simplement faire des balades.
+                            Monter sur un skateboard me permet de me détendre et de profiter de l'extérieur.
+                            C'est une passion que j'ai depuis tout petit et qui me permet de rester actif et créatif.
+                        </p>
+                    </div>
+                    <div class="col-md-6">
+                        <h3>Magie</h3>
+                        <p>
+                            La magie est une autre de mes grandes passions. J'aime faire des tours de magie en soirée, dans la rue, ou simplement en famille.
+                            Je m'entraîne régulièrement et je fais principalement de la magie de close-up.
+                            J'ai également une grande collection de paquets de cartes, ce qui me permet de varier mes tours et de toujours surprendre mon public.
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <br/>
+                        <p>
+                            L'informatique est également une passion pour moi. J'adore bidouiller, tester plein de choses, et réparer des ordinateurs pour les autres.
+                            C'est une activité qui me permet de rester à la pointe de la technologie et de toujours apprendre de nouvelles choses.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- BILAN PROFESSIONNEL -->
+        <div id="bilan" class="section" style="background: #1a1a1a; padding: 60px 0;">
+        <div class="container">
+            <div class="row">
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
+                <br/>
+                <h2 style="color: #ffffff; border-bottom: 2px solid #D43F52; padding-bottom: 10px; margin-bottom: 40px;">💻 Mon Bilan Professionnel</h2>
+
+                <!-- Réseaux -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Réseaux et Télécommunications</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Grâce aux cours du <strong style="color: #D43F52;">BUT RT</strong>, j'ai acquis des compétences solides en configuration réseau (<em>switchs, routeurs, firewalls</em>) et en déploiement d'architectures complètes.
+                </p>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Mon alternance m’a permis d’<strong>analyser, diagnostiquer</strong> et résoudre des problèmes réseau. J’ai aussi appris à utiliser <em>Zabbix, PRTG</em> et <em>Centreon</em> pour la supervision.
+                </p>
+                </div>
+
+                <!-- Développement -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Développement Informatique</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    J’ai travaillé avec <strong style="color: #D43F52;">Python</strong> sur des tests unitaires et des applis web dynamiques. Je maîtrise aussi le développement front-end (<em>HTML, CSS, JavaScript</em>).
+                </p>
+                </div>
+
+                <!-- Gestion de projet -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Gestion de Projet et Méthodes</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Ma formation m’a initié aux <strong>méthodes agiles</strong>, à la <strong>documentation technique</strong> et au <strong>travail en équipe</strong> efficace.
+                </p>
+                </div>
+            </div>
+            </div>
+
+            <!-- BILAN PERSONNEL -->
+            <div class="row" style="margin-top: 50px;">
+            <div class="col-md-12 wow fadeInUp" data-wow-delay="0.7s">
+                <h2 style="color: #ffffff; border-bottom: 2px solid #D43F52; padding-bottom: 10px; margin-bottom: 40px;">⌨️ Mon Bilan Personnel</h2>
+
+                <!-- Alternance -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Transition vers le monde professionnel</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Dès ma 2<sup>e</sup> année, j’ai opté pour l’<strong style="color: #D43F52;">alternance</strong>, confrontant mes connaissances à la réalité du terrain, ce qui m’a permis de progresser techniquement et humainement.
+                </p>
+                </div>
+
+                <!-- Soft Skills -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Compétences professionnelles</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    J’ai renforcé mon <strong>organisation</strong> et ma <strong>communication</strong> face à des projets concrets, en adoptant une approche plus méthodique.
+                </p>
+                </div>
+
+                <!-- Autonomie -->
+                <div style="margin-bottom: 35px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Autonomie et responsabilités</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Progressivement, j’ai gagné en <strong>autonomie</strong> et pris davantage de responsabilités, avec une meilleure maîtrise des outils et des attentes métier.
+                </p>
+                </div>
+
+                <!-- Avenir -->
+                <div style="margin-bottom: 10px;">
+                <h3 style="color: #ffffff; margin-bottom: 15px;">Perspectives d'avenir</h3>
+                <p style="line-height: 1.7; color: #ccc;">
+                    Mon <strong>BUT3</strong> et mon expérience professionnelle me donnent confiance pour l’avenir. Je me sens prêt à relever les défis dans le domaine des <strong>réseaux et télécoms</strong>.
+                </p>
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+        <!-- END BILAN -->
+
+      
+
+        
+        <!-- start footer -->
+        <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-12 wow fadeIn" data-wow-delay="0.9s">
+                        <p>© 2025 - ROUZEAU ARTHUR | RZU-FOLIO</p>
+                        <hr>
+                        <ul class="social-icon">
+                            <li><a href="https://github.com/ArthurFish6" class="fa fa-github"></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+ 
+    <!-- === Chargement des scripts === -->
+
+    <!-- Scripts personnalisés -->
+    <script src="js/custom.js"></script>
+
+    <script src="js/zoom-script.js"></script>
+    <script src="js/observerTemplate.js"></script>
+    <script src="js/portfolioAnimation.js"></script>
+
+    <script src="js/aboutAnimation.core.js"></script>
+    <script src="js/aboutAnimation.extra.js"></script>
+
+    <script src="js/homeAnimation.js"></script>
+    <script src="js/navigation.js"></script>
+
+    <script src="js/workAnimation.js"></script>
+    <script src="js/zoomAnimation.js"></script>
+    <script src="js/abbr-script.js"></script>
+
+
+
+
+
+</body>
+</html>
+
+
