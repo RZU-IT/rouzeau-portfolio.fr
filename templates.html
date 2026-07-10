@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mon Projet</title>
   <style>
-    /* Style global pour tout le document */
+
     * {
       box-sizing: border-box;
       margin: 0;
@@ -14,25 +14,23 @@
     }
 
     body {
-      background: #121212; /* Fond sombre */
-      color: #ffffff; /* Texte clair */
+      background: #121212;
+      color: #ffffff;
       line-height: 1.6;
       padding: 20px;
     }
 
-    /* Style commun à toutes les sections */
     section {
-      background: rgba(255, 255, 255, 0.05); /* Fond transparent */
+      background: rgba(255, 255, 255, 0.05);
       margin: 20px 0;
       padding: 20px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(255, 255, 255, 0.1);
-      opacity: 0; /* Départ invisible */
-      transform: translateY(20px); /* Légèrement décalé vers le bas */
-      animation: fadeInUp 1s ease-out forwards; /* Animation à l'apparition */
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInUp 1s ease-out forwards;
     }
 
-    /* Animation "fadeInUp" */
     @keyframes fadeInUp {
       to {
         opacity: 1;
@@ -41,10 +39,9 @@
     }
 
     h1, h2 {
-      color: #b42e40;; /* Titre bleu clair */
+      color: #b42e40;;
     }
 
-    /* Cadres d'image */
     .image-frame {
       margin-top: 15px;
       border: 2px solid #D43F52;;
@@ -59,7 +56,6 @@
       height: auto;
     }
 
-    /* Galerie images */
     .gallery {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -76,7 +72,7 @@
 
     @media (max-width: 600px) {
       section {
-        padding: 15px; /* Adapté aux petits écrans */
+        padding: 15px;
       }
     }
 
@@ -87,68 +83,58 @@
       margin-top: 40px;
     }
   </style>
+  <link rel="stylesheet" href="assets/styles/responsive.css">
 </head>
 <body>
 
-  <!-- Section d'introduction -->
   <section id="intro">
     <h1>Bienvenue sur mon projet</h1>
     <p>Voici une présentation complète de mon travail sur ce projet passionnant.</p>
   </section>
 
-  <!-- Présentation du projet -->
   <section id="presentation">
     <h2>Présentation</h2>
     <p>Dans cette section, je parle de l’objectif du projet, du contexte, et des grandes lignes générales.</p>
   </section>
 
-  <!-- Liste des outils utilisés -->
   <section id="outils">
     <h2>Outils utilisés</h2>
     <p>HTML, CSS, JavaScript, ainsi que d’autres outils ou frameworks selon le projet (ex: Figma, React, etc.).</p>
   </section>
 
-  <!-- Description du déroulement du projet -->
   <section id="projet">
     <h2>Déroulement du projet</h2>
     <p>Ici, j’explique comment j’ai mené le projet : les étapes, les obstacles rencontrés, les solutions apportées.</p>
   </section>
 
-  <!-- Compétences développées -->
   <section id="competences">
     <h2>Compétences vues et gagnées</h2>
     <p>Liste des compétences techniques ou humaines que j’ai acquises pendant ce projet.</p>
   </section>
 
-  <!-- Retour personnel sur l'expérience -->
   <section id="appréciation">
     <h2>Ce que j’ai aimé</h2>
     <p>Un retour personnel : ce qui m’a plu dans ce projet, ce que j’en retire.</p>
   </section>
 
-  <!-- Nouvelle section dédiée aux images -->
   <section id="galerie">
     <h2>Galerie d'images</h2>
     <p>Quelques images supplémentaires liées au projet.</p>
     <div class="gallery">
-      <img src="galerie1.jpg" alt="Galerie 1">
-      <img src="galerie2.jpg" alt="Galerie 2">
-      <img src="galerie3.jpg" alt="Galerie 3">
-      <img src="galerie4.jpg" alt="Galerie 4">
+      <img src="assets/images/portfolio-img1.jpg" alt="Galerie 1">
+      <img src="assets/images/portfolio-img2.jpg" alt="Galerie 2">
+      <img src="assets/images/portfolio-img3.jpg" alt="Galerie 3">
+      <img src="assets/images/portfolio-img4.jpg" alt="Galerie 4">
     </div>
   </section>
 
-  <!-- Pied de page -->
   <div class="footer">
     © 2025 - Mon Portfolio
   </div>
 
-  <!-- Script pour lancer les animations au fur et à mesure du scroll -->
   <script>
-    // Sélectionne toutes les sections
     const sections = document.querySelectorAll("section");
 
-    // Fonction pour afficher la section si elle est dans la vue
     function showSectionOnScroll() {
       sections.forEach(section => {
         const rect = section.getBoundingClientRect();
@@ -158,9 +144,9 @@
       });
     }
 
-    // Démarre les animations au scroll
     window.addEventListener("scroll", showSectionOnScroll);
     window.addEventListener("load", showSectionOnScroll);
   </script>
 </body>
 </html>
+<!-- Rzu-Informatique -->

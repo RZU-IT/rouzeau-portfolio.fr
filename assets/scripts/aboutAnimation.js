@@ -40,3 +40,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+/* Rzu-Informatique */

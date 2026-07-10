@@ -1,4 +1,4 @@
-/* ./css/cv.css */
+
 * {
     padding: 0;
     margin: 0;
@@ -7,56 +7,46 @@
     font-family: 'Nunito', sans-serif;
 }
 
-/* couleur LI + a*/
-
 li {
-    color: #ccc; /* plus neutre que rouge */
+    color: var(--color-text-muted);
 }
 
 a {
-    color: #D43F52;
+    color: var(--color-accent);
     transition: color 0.3s ease;
 }
 
 a:hover {
-    color: #ffffff;
+    color: var(--color-white);
 }
 
-/* Animation de fondu */
 @keyframes fade-in {
     from { opacity: 0; }
     to { opacity: 1; }
 }
 
-/* Animation de glissement de gauche */
 @keyframes slide-in-left {
     from { transform: translateX(-50px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
 
-/* Animation de glissement de droite */
 @keyframes slide-in-right {
     from { transform: translateX(50px); opacity: 0; }
     to { transform: translateX(0); opacity: 1; }
 }
 
-/* Animation de zoom */
 @keyframes zoom-in {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
 }
 
-/* Animation de remplissage de la barre de progression */
 @keyframes fill-bar {
     from { width: 0; }
     to { width: var(--progress-width); }
 }
 
-/* Layout principal */
-
-/* Ajuster les marges des sous-titres */
 .sub-title {
-    padding-top: 1.5rem; /* Ajuster la marge en haut */
+    padding-top: 1.5rem;
     font-size: 1.2rem;
     text-transform: uppercase;
     color: #f7f7f7;
@@ -71,29 +61,76 @@ a:hover {
     animation: fade-in 1s ease-in;
 }
 
-/* Section de gauche */
 .left-section {
     grid-column: span 2;
     height: 100%;
-    background-color: #1a1a1a; /* Couleur de fond similaire au premier CSS */
+    background-color: var(--color-surface);
     animation: slide-in-left 1s ease-out;
 }
 
-/* Section de droite */
 .right-section {
     grid-column: span 5;
-    background-color: #000000; /* Couleur de fond similaire au premier CSS */
+    background-color: var(--color-black);
     height: 100%;
     animation: slide-in-right 1s ease-out;
 }
 
-/* Profil */
 .left-content {
     padding: 2rem 1.5rem;
 }
 .profile {
     width: 100%;
-    border-bottom: 1px solid #D43F52; /* Couleur de bordure similaire au premier CSS */
+    border-bottom: 1px solid var(--color-accent);
+}
+
+.cv-actions {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.75rem;
+    margin: 0 0 1.5rem;
+}
+
+.cv-action {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.65rem;
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--color-accent);
+    border-radius: 6px;
+    color: var(--color-white);
+    font-size: 0.85rem;
+    font-weight: 600;
+    line-height: 1.2;
+    text-align: center;
+    text-decoration: none;
+    transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+}
+
+.cv-action:hover,
+.cv-action:focus-visible {
+    color: var(--color-white);
+    transform: translateY(-2px);
+}
+
+.cv-action-primary {
+    background-color: var(--color-accent);
+}
+
+.cv-action-primary:hover,
+.cv-action-primary:focus-visible {
+    background-color: var(--color-accent-hover);
+    border-color: var(--color-accent-hover);
+}
+
+.cv-action-secondary {
+    background-color: transparent;
+}
+
+.cv-action-secondary:hover,
+.cv-action-secondary:focus-visible {
+    background-color: rgba(212, 63, 82, 0.16);
 }
 .image {
     width: 100%;
@@ -102,28 +139,28 @@ a:hover {
 .profile img {
     width: 100%;
     border-radius: 50%;
-    border: 8px solid #D43F52; /* Couleur de bordure similaire au premier CSS */
+    border: 8px solid var(--color-accent);
     animation: zoom-in 1.2s ease-in-out;
 }
 .name {
     font-size: 2rem;
-    color: white; /* Texte en blanc */
+    color: white;
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding: 1.2rem 0;
-    margin-top: 1rem; /* Marge en haut */
+    margin-top: 1rem;
 }
 .career {
     font-size: 1.2rem;
-    color: #aaa; /* adoucissement visuel */
+    color: var(--color-text-soft);
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1px;
     padding-bottom: 1rem;
     margin-top: 1rem;
 }
-/* Ajuster les marges des titres principaux */
+
 .main-title {
     font-size: 1.8rem;
     text-transform: uppercase;
@@ -131,10 +168,9 @@ a:hover {
     color: white;
     padding-top: 3rem;
     margin-top: 1rem;
-    margin-bottom: 1rem; /* Réduire la marge en bas */
+    margin-bottom: 1rem;
 }
 
-/* Informations de contact */
 .contact-info ul {
     padding-top: 2rem;
 }
@@ -142,24 +178,22 @@ a:hover {
     padding: .4rem 0;
     display: flex;
     align-items: center;
-    color: #aaa; /* neutre et lisible */
+    color: var(--color-text-soft);
 }
 .contact-info ul li i {
-    color: #D43F52; /* on garde la couleur ici pour les icônes */
+    color: var(--color-accent);
 }
 
 .contact-info a {
     text-decoration: none;
-    color: #D43F52;
+    color: var(--color-accent);
 }
 
 .contact-info a:hover {
     text-decoration: underline;
-    color: #ffffff;
+    color: var(--color-white);
 }
 
-
-/* Compétences */
 .skills-section ul {
     padding-top: 2rem;
 }
@@ -172,7 +206,7 @@ a:hover {
 }
 .skill-title {
     text-transform: uppercase;
-    color: #ffffff;
+    color: var(--color-white);
     font-size: 0.9rem;
     font-weight: bold;
     margin-top: 1rem;
@@ -188,36 +222,33 @@ a:hover {
 }
 .progress {
     width: 0;
-    background-color: #D43F52; /* Couleur de la barre de progression similaire au premier CSS */
+    background-color: var(--color-accent);
     height: 6px;
     border-radius: 12px;
     animation: fill-bar 2s ease-out forwards;
 }
 
-/* Références */
 .references-section li {
-    color: #D43F52; /* Texte en rouge */
+    color: var(--color-accent);
     padding: .2rem 0;
     animation: fade-in 1.2s ease;
 }
 .references-section li i {
     padding-right: .5rem;
     font-size: 1.2rem;
-    color: #D43F52; /* Couleur de l'icône similaire au premier CSS */
+    color: var(--color-accent);
 }
 
-/* Titres */
 .right-main-content {
     padding: 2rem 3rem;
 }
 
-/* Ajuster les marges des titres de droite */
 .right-title {
     width: 100%;
     letter-spacing: 1px;
     text-transform: uppercase;
     color: white;
-    margin-bottom: 0.8rem; /* Réduire la marge en bas */
+    margin-bottom: 0.8rem;
     position: relative;
     margin-top: 1rem;
 }
@@ -227,7 +258,7 @@ a:hover {
     position: absolute;
     width: 60%;
     height: .2rem;
-    background-color: #ccc;
+    background-color: var(--color-text-muted);
     border-radius: 12px;
     right: 0;
     top: 50%;
@@ -235,16 +266,15 @@ a:hover {
 }
 .para {
     line-height: 1.6rem;
-    color: #ccc;
+    color: var(--color-text-muted);
     font-size: 1.1rem;
 }
 
-/* Timeline */
 .timeline {
     flex: 1;
     padding: 10px;
 }
-/* Ajuster les marges des titres de timeline */
+
 .tl-title,
 .tl-title-2 {
     letter-spacing: 1px;
@@ -252,11 +282,11 @@ a:hover {
     color: white;
     text-transform: uppercase;
     margin-top: 1rem;
-    margin-bottom: 0.5rem; /* Réduire la marge en bas */
+    margin-bottom: 0.5rem;
 }
 
 .tl-content {
-    border-left: 1px solid #ccc;
+    border-left: 1px solid var(--color-text-muted);
     padding-left: 2rem;
     position: relative;
     padding-bottom: 2rem;
@@ -266,13 +296,12 @@ a:hover {
     position: absolute;
     width: .7rem;
     height: .7rem;
-    background-color: #D43F52; /* Couleur de fond similaire au premier CSS */
+    background-color: var(--color-accent);
     border-radius: 50%;
     transform: translateX(-50%);
     left: 0;
 }
 
-/* Spécifiques à Éducation */
 .education {
     text-align: center;
 }
@@ -281,7 +310,6 @@ a:hover {
     display: none !important;
 }
 
-/* Divers */
 .full-width-image img {
     width: 100%;
     height: auto;
@@ -291,7 +319,6 @@ a:hover {
     width: 100%;
 }
 
-/* Media Queries pour adaptation mobile */
 @media (max-width: 1200px) {
     .main-content {
         grid-template-columns: repeat(1, 1fr);
@@ -359,20 +386,20 @@ a:hover {
     .right-main-content {
         padding: 0.3rem;
     }
+
+    .cv-actions {
+        grid-template-columns: 1fr;
+    }
 }
 
-
-/*correction*/
-
 .right-main-content {
-    padding: 3rem 3rem; /* Augmentez le padding en haut pour éloigner le contenu du bord supérieur */
+    padding: 3rem 3rem;
 }
 
 .about, .experince, .education, .awards, .experience {
-    margin-bottom: 3rem; /* Ajoutez une marge en bas de chaque section pour un meilleur espacement */
+    margin-bottom: 3rem;
     margin-top: 40px;
 }
-
 
 abbr {
   text-decoration: underline dotted;
@@ -383,7 +410,7 @@ abbr[data-shown="true"]::after {
   content: attr(title);
   position: absolute;
   background: #333;
-  color: #fff;
+  color: var(--color-white);
   padding: 6px 10px;
   border-radius: 6px;
   top: 130%;
@@ -392,3 +419,5 @@ abbr[data-shown="true"]::after {
   z-index: 10;
   font-size: 0.9em;
 }
+
+/* Rzu-Informatique */

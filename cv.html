@@ -5,9 +5,11 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Resume</title>
-  <link rel="stylesheet" href="./css/cv.css">
+  <link rel="stylesheet" href="assets/styles/root.css">
+  <link rel="stylesheet" href="assets/styles/cv.css">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="assets/styles/responsive.css">
 </head>
 <body>
 
@@ -15,13 +17,16 @@
   <section class="left-section">
     <div class="left-content">
       <div class="profile">
-        <!--<div class="image">
-          <img src="/avatar.jpg" alt="">
-        </div>-->
 
-        <div style="display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-top: 15px;">
-          <a href="index.html" class="btn" style="color: white; border: none; border-radius: 8px; padding: 8px 16px;">← Retour</a>
-          <a href="public/CV_Arthur_ROUZEAU.pdf" class="btn" download style="color: white; border: none; border-radius: 8px; padding: 8px 16px;">⬇ Télécharger mon CV</a>
+        <div class="cv-actions">
+          <a href="index.html" class="cv-action cv-action-secondary">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span>Retour au portfolio</span>
+          </a>
+          <a href="assets/public/CV_Arthur_ROUZEAU.pdf" class="cv-action cv-action-primary" download>
+            <i class="fa fa-download" aria-hidden="true"></i>
+            <span>Télécharger le CV</span>
+          </a>
         </div>
 
         <h2 class="name">Arthur Rouzeau</h2>
@@ -115,7 +120,7 @@
 
   <section class="right-section">
     <div class="net_bg full-width-image">
-      <img src="./images/bg.jpg" alt="Background" style="height: 300px; object-fit: cover; object-position: top;">
+      <img src="assets/images/bg.jpg" alt="Background" style="height: 300px; object-fit: cover; object-position: top;">
     </div>
     <div class="right-main-content">
 
@@ -130,7 +135,6 @@
       <section class="experince sect">
         <h2 class="right-title">Experiences</h2>
 
-        <!-- Alten -->
         <div class="timeline">
           <h5 class="tl-title">Alternance Alten (anciennement <abbr title="Atos: Une entreprise internationale de services informatiques.">Atos</abbr>)</h5>
           <p class="para">Depuis 08/2023</p>
@@ -148,7 +152,6 @@
           </ul>
         </div>
 
-        <!-- Intermarché -->
         <div class="timeline">
           <h5 class="tl-title">Intermarché, Domarin</h5>
           <p class="para">07/2022 - 02/2023</p>
@@ -164,7 +167,6 @@
           </ul>
         </div>
 
-      <!-- Fibre -->
       <div class="timeline">
           <h5 class="tl-title">Fibre Optique — Technicien</h5>
           <p class="para">2019 - 2020</p>
@@ -179,7 +181,6 @@
           </ul>
       </div>
 
-      <!-- Novaxium -->
       <div class="timeline">
           <h5 class="tl-title">Novaxium, Lyon — Stage</h5>
           <p class="para">12/2018</p>
@@ -239,3 +240,4 @@
 
 </body>
 </html>
+<!-- Rzu-Informatique -->
