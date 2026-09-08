@@ -155,8 +155,9 @@
   }
 
   .skills-link {
-    width: min(100%, 270px);
+    width: min(100%, 310px);
     margin-top: 6px;
+    white-space: nowrap;
   }
 
   .static-tt {
@@ -230,11 +231,27 @@
   }
 
   .portfolio-thumb .portfolio-overlay h4 {
-    font-size: 1.7rem;
+    font-size: 1.15rem;
   }
 
   .portfolio-thumb .portfolio-overlay h5 {
-    font-size: 1.25rem;
+    font-size: 0.95rem;
+  }
+}
+
+@media (hover: none) and (pointer: coarse) {
+  #home h1,
+  h2,
+  .static-tt {
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    text-shadow: none;
+  }
+
+  #home h1 {
+    padding: 0;
   }
 }
 
@@ -276,4 +293,4 @@
   }
 }
 
-/* Rzu-Informatique */
+/* Copyright RZU Informatique */

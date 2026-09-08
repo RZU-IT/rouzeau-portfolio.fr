@@ -44,4 +44,4 @@ document.addEventListener('DOMContentLoaded', function() {
     window.addEventListener("scroll", showSectionOnScroll);
     window.addEventListener("load", showSectionOnScroll);
 
-/* Rzu-Informatique */
+// Copyright RZU Informatique

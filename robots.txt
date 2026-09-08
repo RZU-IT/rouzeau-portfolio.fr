@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rzu-it.github.io/rouzeau-portfolio.fr/sitemap.xml
+
+# Copyright RZU Informatique

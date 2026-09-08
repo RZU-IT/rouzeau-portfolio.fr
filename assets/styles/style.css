@@ -271,13 +271,29 @@ h1,h2,h3,h4,h5 {
     width: 100%;
     height: 100%;
     position: absolute;
-    padding-top: 60px;
-    transition: all 0.4s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
+    padding: clamp(12px, 3vw, 28px);
+    text-align: center;
+    transition: opacity 0.3s ease-in-out;
 }
 #portfolio .portfolio-thumb:hover .portfolio-overlay {
     cursor: pointer;
-    opacity: 0.8;
-    transform: scale(0.9);
+    opacity: 0.9;
+}
+
+#portfolio .portfolio-thumb .portfolio-overlay h4,
+#portfolio .portfolio-thumb .portfolio-overlay h5 {
+    max-width: 24ch;
+    margin: 4px auto;
+    padding: 0;
+    color: var(--color-white);
+    font-size: clamp(0.95rem, 2vw, 1.35rem);
+    line-height: 1.25;
+    text-align: center;
 }
 
 .portfolio-alt-card {
@@ -308,8 +324,8 @@ h1,h2,h3,h4,h5 {
 }
 
 .portfolio-alt-card:hover .alt-btn {
-    transform: scale(1.05);
-    box-shadow: 0 6px 16px rgba(212, 63, 82, 0.4);
+    transform: translateY(-1px);
+    box-shadow: none;
 }
   #contact address {
     padding-bottom: 18px;
@@ -422,7 +438,7 @@ footer hr {
     color: var(--color-white);
     font-weight: 700;
     text-decoration: none;
-    box-shadow: 0 10px 28px rgba(212, 63, 82, 0.25);
+    box-shadow: none;
     transition: transform 0.25s ease, background-color 0.25s ease, box-shadow 0.25s ease;
 }
 .skills-link:hover,
@@ -430,8 +446,8 @@ footer hr {
     background: var(--color-accent-hover);
     color: var(--color-white);
     text-decoration: none;
-    transform: translateY(-2px);
-    box-shadow: 0 14px 34px rgba(212, 63, 82, 0.34);
+    transform: translateY(-1px);
+    box-shadow: none;
 }
 #zoom ul {
     list-style: none;
@@ -572,4 +588,4 @@ to {
   }
 }
 
-/* Rzu-Informatique */
+/* Copyright RZU Informatique */

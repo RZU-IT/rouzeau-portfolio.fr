@@ -1,0 +1,223 @@
+body {
+  width: min(calc(100% - 40px), 1180px);
+  margin: 0 auto;
+  padding: 0 0 54px;
+  color: rgba(255, 255, 255, .88);
+  background: #111313;
+}
+
+section,
+#intro {
+  width: 100%;
+  margin: 0;
+  padding: 54px 0;
+  border: 0;
+  border-bottom: 1px solid rgba(255, 255, 255, .14);
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-shadow: none;
+}
+
+#intro > div[style] {
+  margin: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+h1,
+h2,
+h3,
+p,
+li { text-shadow: none !important; }
+
+h1 {
+  max-width: 20ch;
+  margin: 0 0 22px;
+  font-size: clamp(2.35rem, 4.6vw, 3.75rem) !important;
+  line-height: 1.04;
+  overflow-wrap: anywhere;
+}
+
+h2 {
+  margin: 0 0 16px;
+  font-size: clamp(1.45rem, 2.2vw, 1.85rem) !important;
+  line-height: 1.2;
+}
+
+h3 {
+  margin: 18px 0 9px;
+  font-size: clamp(1.15rem, 1.7vw, 1.4rem) !important;
+}
+
+p,
+li {
+  font-size: clamp(.98rem, 1.15vw, 1.06rem) !important;
+  line-height: 1.72;
+}
+
+.visually-hidden {
+  position: absolute !important;
+  width: 1px !important;
+  height: 1px !important;
+  padding: 0 !important;
+  margin: -1px !important;
+  overflow: hidden !important;
+  clip: rect(0, 0, 0, 0) !important;
+  white-space: nowrap !important;
+  border: 0 !important;
+}
+
+#intro {
+  padding: clamp(68px, 9vw, 108px) 0 clamp(50px, 7vw, 76px);
+  text-align: center;
+}
+
+#intro h1,
+#intro p {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+#intro p {
+  max-width: 800px;
+  color: rgba(255, 255, 255, .72);
+}
+
+body > section h2::after {
+  content: "";
+  display: block;
+  width: 42px;
+  height: 3px;
+  margin-top: 15px;
+  background: #d43f52;
+}
+
+@media (min-width: 1101px) {
+  body > section:not(#intro):not(#galerie):not(.project-toolkit):not([id="outils & technologies"]) {
+    display: grid;
+    grid-template-columns: minmax(180px, 240px) minmax(0, 1fr);
+    column-gap: clamp(54px, 8vw, 100px);
+    align-items: start;
+  }
+
+  body > section:not(#intro):not(#galerie):not(.project-toolkit):not([id="outils & technologies"]) > h2:first-child {
+    grid-column: 1;
+    grid-row: 1 / span 30;
+    margin: 0;
+  }
+
+  body > section:not(#intro):not(#galerie):not(.project-toolkit):not([id="outils & technologies"]) > :not(h2:first-child) {
+    grid-column: 2;
+  }
+}
+
+.project-toolkit { padding-block: 48px; }
+
+.tool-columns {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.tool-group {
+  min-width: 0;
+  padding: 8px clamp(24px, 4vw, 48px) 10px;
+  border-left: 1px solid rgba(255, 255, 255, .16);
+}
+
+.tool-group:first-child {
+  padding-left: 0;
+  border-left: 0;
+}
+
+.tool-group:last-child { padding-right: 0; }
+
+.tool-group > img {
+  width: 42px;
+  height: 42px;
+  margin-bottom: 24px;
+  filter: invert(38%) sepia(67%) saturate(1474%) hue-rotate(315deg) brightness(91%);
+}
+
+.tool-group h2 { margin-bottom: 22px; }
+.tool-group h2::after { display: none; }
+.tool-group ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px 20px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+.tool-group li { margin: 0; color: rgba(255, 255, 255, .78); }
+
+.protocol-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 18px;
+}
+
+.project-split {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(28px, 5vw, 64px);
+  margin: 22px 0 0;
+}
+
+.project-split h3 { margin-top: 0; }
+
+.features-grid { gap: 0 !important; }
+
+.feature-item {
+  padding: 22px 24px !important;
+  border: 0 !important;
+  border-top: 1px solid rgba(255, 255, 255, .14) !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
+#galerie { padding-top: 62px; }
+#galerie > h2 { text-align: center; }
+#galerie > h2::after { margin-inline: auto; }
+.gallery { gap: 18px; }
+.gallery img { border-radius: 5px; box-shadow: none; }
+.custom-checklist li { margin-left: 0; }
+
+.back-arrow {
+  box-shadow: none;
+  transition: transform .2s ease, background-color .2s ease;
+}
+
+@media (max-width: 820px) {
+  body { width: min(calc(100% - 28px), 660px); }
+  section, #intro { padding: 34px 0; }
+  #intro { padding-top: 58px; }
+  .tool-columns { grid-template-columns: 1fr; }
+  .tool-group,
+  .tool-group:first-child,
+  .tool-group:last-child {
+    padding: 26px 0;
+    border: 0;
+    border-bottom: 1px solid rgba(255, 255, 255, .14);
+  }
+  .tool-group:last-child { border-bottom: 0; }
+  .tool-group > img { margin-bottom: 16px; }
+  .project-split { grid-template-columns: 1fr; }
+}
+
+@media (min-width: 821px) and (max-width: 1100px) {
+  body > section:not(#intro):not(#galerie):not(.project-toolkit):not([id="outils & technologies"]) > h2:first-child {
+    margin-bottom: 26px;
+  }
+}
+
+@media (max-width: 520px) {
+  body { width: min(calc(100% - 22px), 520px); }
+  h1 { font-size: clamp(2rem, 10vw, 2.6rem) !important; }
+  h2 { font-size: clamp(1.35rem, 7vw, 1.65rem) !important; }
+  .protocol-list { grid-template-columns: 1fr; }
+  .gallery { grid-template-columns: 1fr; }
+}
+
+/* Copyright RZU Informatique */

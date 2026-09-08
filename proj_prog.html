@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projet - Traitement de données</title>
   <link rel="stylesheet" href="assets/styles/root.css">
   <link rel="stylesheet" href="assets/styles/project.css">
   <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link rel="stylesheet" href="assets/styles/project-clean.css?v=4">
 </head>
 <body>
 
   <div id="abbr-tooltip" class="abbr-tooltip"></div>
 
   <section id="intro">
-    <h1>Projet : Traitement de données</h1>
+    <h1>Traitement API</h1>
     <p>Ce projet universitaire a été réalisé dans le cadre de ma formation en informatique. Il avait pour but de développer une application fonctionnelle autour d'une <abbr data-title="Application Programming Interface: Interface permettant à différents logiciels de communiquer entre eux.">API</abbr>, tout en respectant un cahier des charges précis et des contraintes techniques réelles.</p>
     <p>Ce travail m'a permis de renforcer mes compétences en développement <abbr data-title="Langage de programmation polyvalent.">Python</abbr>, en gestion de projet, et d'expérimenter des outils professionnels comme <abbr data-title="Environnement de développement intégré pour Python.">PyCharm</abbr> et <abbr data-title="Système de contrôle de version distribué.">GitLab</abbr>. J'ai aussi découvert l'intérêt de structurer efficacement son code pour faciliter sa lecture, sa maintenance et sa documentation.</p>
   </section>
@@ -31,33 +33,45 @@
     </ul>
   </section>
 
-  <section id="outils & technologies">
-    <h2>Logiciels</h2>
-    <ul>
-      <li> ▫ PyCharm</li>
-      <li> ▫ VSCode</li>
-      <li> ▫ Excel</li>
-    </ul>
-    <h2>Technologies</h2>
-    <ul>
-      <li> ▫ GitLab</li>
-      <li> ▫ API</li>
-    </ul>
-    <h2>Languages</h2>
-    <ul>
-      <li> ▫ Python</li>
-      <li> ▫ Git</li>
-    </ul>
+  <section id="outils" class="project-toolkit" aria-labelledby="outils-title">
+    <h2 id="outils-title" class="visually-hidden">Outils</h2>
+    <div class="tool-columns">
+      <div class="tool-group">
+        <img src="assets/images/project-icons/pycharm.svg" alt="" aria-hidden="true">
+        <h2>Logiciels</h2>
+        <ul>
+          <li>PyCharm</li>
+          <li>VS Code</li>
+          <li>Excel</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/gitlab.svg" alt="" aria-hidden="true">
+        <h2>Technologies</h2>
+        <ul>
+          <li>GitLab</li>
+          <li>API</li>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/python.svg" alt="" aria-hidden="true">
+        <h2>Langages</h2>
+        <ul>
+          <li>Python</li>
+          <li>Git</li>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="projet">
-    <h2>Déroulement du projet</h2>
+    <h2>Déroulement</h2>
     <p>L'IUT nous a fourni une API qui présentait les données sous forme de dictionnaire, incluant les horaires de toutes les personnes travaillant à l'IUT et des salles disponibles. Il a fallu rechercher les informations via l'API, puis procéder à un tri en sélectionnant uniquement les vacataires.<br/><br/></p>
     <p>Une fois les informations triées, nous avons utilisé un module CSV de Python pour les intégrer. Le fichier CSV était disponible sur un site internet que nous avons dû déployer. Grâce à ce site, les vacataires pouvaient réserver une salle.</p>
   </section>
 
   <section id="appréciation">
-    <h2>Ce que j'ai apprécié</h2>
+    <h2>Bilan</h2>
     <p>J'ai beaucoup apprécié ce projet car il m'a permis de découvrir l'outil PyCharm, que j'utilise désormais sur mon temps personnel. Ce qui m'a le plus captivé, c'est que ce projet avait un véritable objectif concret et applicable dans le monde professionnel.</p>
   </section>
 
@@ -98,4 +112,5 @@
   </a>
 </body>
 </html>
-<!-- Rzu-Informatique -->
+
+<!-- Copyright RZU Informatique -->

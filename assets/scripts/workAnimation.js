@@ -1,3 +1,3 @@
 document.addEventListener("DOMContentLoaded",()=>{let t=document.querySelectorAll("#work .media");t.forEach((t,e)=>{let a=t.querySelector("i"),l=t.querySelector(".media-body");a.style.opacity=0,a.style.transform="translateY(-50px) scale(0.5)",a.style.transition="all 0.6s ease-out",l.style.opacity=0;let s=e%2==0?"-40px":"40px";l.style.transform=`translateX(${s})`,l.style.transition="all 0.6s ease-out",setTimeout(()=>{a.style.opacity=1,a.style.transform="translateY(0) scale(1.2)",setTimeout(()=>{a.style.transform="translateY(0) scale(1)"},300),l.style.opacity=1,l.style.transform="translateX(0)"},300+200*e)})});
 
-/* Rzu-Informatique */
+// Copyright RZU Informatique

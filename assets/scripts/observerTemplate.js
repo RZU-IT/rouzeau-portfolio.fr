@@ -1,3 +1,3 @@
 function observeSection(e,r,t={}){let n=document.querySelector(e);if(!n)return;let o={threshold:.2,...t},s=new IntersectionObserver((e,t)=>{e.forEach(e=>{e.isIntersecting&&(r(),t.unobserve(e.target))})},o);s.observe(n)}
 
-/* Rzu-Informatique */
+// Copyright RZU Informatique

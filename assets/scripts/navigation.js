@@ -18,4 +18,4 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
-/* Rzu-Informatique */
+// Copyright RZU Informatique

@@ -28,4 +28,4 @@ function handleScroll() {
 window.addEventListener('scroll', handleScroll);
 document.addEventListener('DOMContentLoaded', handleScroll);
 
-/* Rzu-Informatique */
+// Copyright RZU Informatique

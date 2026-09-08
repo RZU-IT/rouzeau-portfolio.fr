@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <link rel="stylesheet" href="assets/styles/zoom-style.css">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -8,6 +9,7 @@
   <link rel="stylesheet" href="assets/styles/root.css">
   <link rel="stylesheet" href="assets/styles/project.css">
   <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link rel="stylesheet" href="assets/styles/project-clean.css?v=4">
 </head>
 <body>
   <div id="abbr-tooltip" class="abbr-tooltip"></div>
@@ -17,7 +19,7 @@
   </div>
 
   <section id="intro">
-    <h1>Projet : Initialisation à la <abbr data-title="Cybersécurité: Ensemble des techniques pour protéger les systèmes, réseaux et données contre les attaques numériques.">cybersécurité</abbr></h1>
+    <h1>Fondamentaux cyber</h1>
     <p>
       Ce projet avait pour objectif de nous initier aux bases de la cybersécurité, en combinant une approche théorique et pratique. Il s'inscrivait dans un projet nous permettant d'explorer des outils utilisés par les professionnels, tout en travaillant de manière autonome et collaborative.
     </p>
@@ -39,10 +41,13 @@
     </ul>
   </section>
 
-  <section id="outils">
-    <h2>Outils et technologies</h2>
-    <h3>Logiciels</h3>
-    <ul>
+  <section id="outils" class="project-toolkit" aria-labelledby="outils-title">
+    <h2 id="outils-title" class="visually-hidden">Outils</h2>
+    <div class="tool-columns">
+      <div class="tool-group">
+        <img src="assets/images/project-icons/network-wired.svg" alt="" aria-hidden="true">
+        <h2>Logiciels</h2>
+        <ul>
       <li> ▫ <abbr data-title="Network Mapper: Outil d'exploration réseau et de scan de sécurité.">Nmap</abbr></li>
       <li> ▫ <abbr data-title="Outil de test d'injection SQL pour détecter et exploiter les failles SQL.">SQLMap</abbr></li>
       <li> ▫ <abbr data-title="Framework pour le développement et l'exécution d'exploits contre des cibles distantes.">Metasploit</abbr></li>
@@ -55,31 +60,37 @@
       <li> ▫ <abbr data-title="Outils de brute force pour les mots de passe.">Hydra & Medusa</abbr></li>
       <li> ▫ <abbr data-title="Bibliothèque de cryptographie open source.">OpenSSL</abbr></li>
       <li> ▫ <abbr data-title="Exploit Database: Base de données d'exploits connus.">Exploit DB</abbr></li>
-    </ul>
-
-    <h3>Failles étudiées</h3>
-    <ul>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/server.svg" alt="" aria-hidden="true">
+        <h2>Failles</h2>
+        <ul>
       <li> ▫ <abbr data-title="Vulnérabilité dans le protocole SMB de Microsoft Windows.">EthernalBlue</abbr></li>
       <li> ▫ <abbr data-title="Ransomware exploitant la vulnérabilité EternalBlue.">WannaCry</abbr></li>
-    </ul>
-
-    <h3>Langages</h3>
-    <ul>
+        </ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/python.svg" alt="" aria-hidden="true">
+        <h2>Langages</h2>
+        <ul>
       <li> ▫ <abbr data-title="Langage de programmation polyvalent.">Python</abbr> & <abbr data-title="Langage de script orienté objet.">Ruby</abbr></li>
       <li> ▫ <abbr data-title="Langage de script pour les systèmes Unix.">Bash</abbr></li>
       <li> ▫ <abbr data-title="Langage de script pour les systèmes Windows.">PowerShell</abbr></li>
-    </ul>
+        </ul>
+      </div>
+    </div>
   </section>
 
   <section id="projet">
-    <h2>Déroulement du projet</h2>
+    <h2>Déroulement</h2>
     <p>Le projet faisait suite à des cours de <abbr data-title="Cybersécurité: Ensemble des techniques pour protéger les systèmes, réseaux et données contre les attaques numériques.">cybersécurité</abbr> et de <abbr data-title="Cryptographie: Science des techniques pour sécuriser les communications.">cryptographie</abbr> que nous avons suivis. Durant les heures dédiées au projet, nous devions lire des documents, rechercher des informations sur des sites internet officiels, puis répondre à différents quiz portant sur des thèmes variés à partir des informations trouvées.<br/><br/></p>
     <p>Nous avons exploré l'utilisation de différents logiciels tels que Nmap pour scanner des réseaux, Legion pour scanner et exploiter les réseaux, Burpsuite pour maîtriser les sites web, et Metasploit qui permet de générer des virus informatiques.<br/><br/></p>
     <p>Durant les séances, nous avons eu l'occasion d'élargir notre culture informatique en apprenant des dates importantes ou en étudiant des logiciels tels que WannaCry et EternalBlue.</p>
   </section>
 
   <section id="competences">
-    <h2>Compétences développées</h2>
+    <h2>Compétences</h2>
     <ul class="custom-checklist">
       <li>Initiation aux principes fondamentaux de la cybersécurité</li>
       <li>Utilisation d'outils de test et d'analyse comme Nmap, Nikto, SQLMap, Metasploit</li>
@@ -91,7 +102,7 @@
   </section>
 
   <section id="appréciation">
-    <h2>Ce que j'ai apprécié</h2>
+    <h2>Bilan</h2>
     <p>
       Ce projet était réellement enrichissant. J'ai particulièrement apprécié la phase d'exploitation et d'analyse des vulnérabilités, qui nous plaçait dans une posture proche de cas réels.
     </p>
@@ -136,4 +147,5 @@
   </a>
 </body>
 </html>
-<!-- Rzu-Informatique -->
+
+<!-- Copyright RZU Informatique -->

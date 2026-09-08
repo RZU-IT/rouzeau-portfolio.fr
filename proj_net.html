@@ -1,49 +1,47 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Projet - Initialisation aux réseaux informatiques</title>
   <link rel="stylesheet" href="assets/styles/root.css">
   <link rel="stylesheet" href="assets/styles/project.css">
   <link rel="stylesheet" href="assets/styles/responsive.css">
+  <link rel="stylesheet" href="assets/styles/project-clean.css?v=4">
 </head>
 <body>
 
   <div id="abbr-tooltip" class="abbr-tooltip"></div>
 
   <section id="intro">
-    <h1>Projet : Initialisation aux réseaux informatiques</h1>
+    <h1>Réseaux</h1>
     <p>Ce projet consistait à configurer un réseau informatique complet avec différents équipements Cisco. J'ai appris à configurer des <abbr data-title="Virtual Local Area Network: Un réseau local virtuel qui permet de segmenter un réseau physique en plusieurs réseaux logiques.">VLAN</abbr>, des <abbr data-title="Un routeur est un équipement réseau qui achemine les paquets entre différents réseaux.">routeurs</abbr> et des <abbr data-title="Un commutateur réseau est un équipement qui permet de connecter plusieurs appareils dans un réseau local.">switches</abbr>.</p>
     <p>J'ai utilisé <abbr data-title="Logiciel de simulation de réseau développé par Cisco.">Cisco Packet Tracer</abbr> pour créer et tester différentes topologies réseau, ce qui m'a permis de comprendre les concepts fondamentaux du routage et de la commutation.</p>
   </section>
 
-  <section id="outils & technologies">
-    <h2>Logiciel</h2>
-    <ul>
-      <li> ▫ Cisco Packet Tracer</li>
-    </ul>
-    <h2>Matériels</h2>
-    <ul>
-      <li> ▫ Routeur Cisco</li>
-      <li> ▫ Switch Cisco</li>
-      <li> ▫ VLAN</li>
-    </ul>
-    <h2>Protocols</h2>
-    <ul>
-      <li> ▫ Inter-VLAN Routing</li>
-      <li> ▫ IPv4</li>
-      <li> ▫ ICMP</li>
-      <li> ▫ ARP</li>
-      <li> ▫ NAT</li>
-      <li> ▫ DNS</li>
-      <li> ▫ DHCP & DHCP Relay</li>
-      <li> ▫ Spanning Tree</li>
-    </ul>
+  <section id="outils-technologies" class="project-toolkit" aria-label="Outils et technologies">
+    <div class="tool-columns">
+      <div class="tool-group">
+        <img src="assets/images/project-icons/diagram-project.svg" alt="" aria-hidden="true">
+        <h2>Logiciel</h2>
+        <ul><li>Cisco Packet Tracer</li></ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/server.svg" alt="" aria-hidden="true">
+        <h2>Matériels</h2>
+        <ul><li>Routeurs Cisco</li><li>Switches Cisco</li><li>VLAN</li></ul>
+      </div>
+      <div class="tool-group">
+        <img src="assets/images/project-icons/network-wired.svg" alt="" aria-hidden="true">
+        <h2>Protocoles</h2>
+        <ul class="protocol-list"><li>Inter-VLAN</li><li>IPv4</li><li>ICMP</li><li>ARP</li><li>NAT</li><li>DNS</li><li>DHCP Relay</li><li>Spanning Tree</li></ul>
+      </div>
+    </div>
   </section>
 
   <section id="projet">
-    <h2>Déroulement du projet</h2>
+    <h2>Déroulement</h2>
     <p>Nous avons utilisé Cisco Packet Tracer pour simuler des réseaux, puis mis en place un petit réseau d'entreprise en configurant les routeurs, les adresses IP, les commutateurs, les serveurs web, etc. </p>
     <p>Dans un deuxième temps, nous avons mis en place tout un ensemble de VLANs. Le but était, pour une entreprise, de créer plusieurs VLANs avec des droits différents sur des ports distincts. <br/><br/>Nous avons également eu recours à des switches de niveau 3 et configuré du routage inter-VLAN.</p>
     <p> Enfin, nous avons réalisé un TP grandeur nature. Au lieu d'utiliser un logiciel de simulation, nous avions à notre disposition de véritables commutateurs de marques différentes. L'objectif était d'acquérir une polyvalence accrue et de maîtriser la configuration de ces derniers de manière efficace. </p>
@@ -63,7 +61,7 @@
   </section>
 
   <section id="appréciation">
-    <h2>Ce que j'ai apprécié</h2>
+    <h2>Bilan</h2>
     <p>J'ai particulièrement apprécié la partie pratique de ce projet où j'ai pu configurer des équipements réseau réels. Cela m'a permis de mieux comprendre comment les réseaux fonctionnent dans la réalité, au-delà de la théorie.</p>
     <p>J'ai aussi aimé travailler avec Cisco Packet Tracer car il offre une interface intuitive pour simuler des réseaux complexes.</p>
   </section>
@@ -105,4 +103,5 @@
   </a>
 </body>
 </html>
-<!-- Rzu-Informatique -->
+
+<!-- Copyright RZU Informatique -->

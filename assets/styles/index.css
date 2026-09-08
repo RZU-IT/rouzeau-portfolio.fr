@@ -21,11 +21,6 @@
             margin-bottom: 0 !important;
         }
 
-        .section {
-            padding-top: 40px;
-            padding-bottom: 30px;
-        }
-
         .rotate {
             display: block !important;
         }
@@ -35,10 +30,6 @@
         }
 
         @media (hover: none) and (pointer: coarse) {
-            .rotate {
-                display: none !important;
-            }
-
             .static-tt {
                 display: block !important;
             }
@@ -85,4 +76,4 @@
         }
         }
 
-/* Rzu-Informatique */
+/* Copyright RZU Informatique */
