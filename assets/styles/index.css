@@ -77,3 +77,37 @@
         }
 
 /* Copyright RZU Informatique */
+
+@media (max-width: 768px) {
+    html {
+        -webkit-text-size-adjust: 100%;
+        text-size-adjust: 100%;
+    }
+
+    #home .col-md-8 {
+        min-width: 0;
+        overflow: hidden;
+    }
+
+    #home .rotate {
+        display: grid !important;
+        width: 100%;
+        max-width: 100%;
+        min-height: 3.2em;
+        margin: 16px auto;
+        padding: 0 4px;
+        place-items: center;
+        font-size: clamp(.98rem, 4.7vw, 1.24rem);
+        line-height: 1.2;
+        overflow-wrap: anywhere;
+    }
+
+    #home .static-tt { display: none !important; }
+}
+
+@media (max-width: 380px) {
+    #home .rotate {
+        min-height: 3.4em;
+        font-size: clamp(.88rem, 4.4vw, 1rem);
+    }
+}

@@ -31,6 +31,22 @@ document.addEventListener('DOMContentLoaded', function() {
           document.addEventListener('click', hideTooltip);
         });
       });
+
+      document.querySelectorAll('.project-toolkit .tool-group ul').forEach(list => {
+        if (list.children.length < 2) return;
+
+        const button = document.createElement('button');
+        button.type = 'button';
+        button.className = 'tool-list-toggle';
+        button.textContent = 'Voir la suite';
+        button.setAttribute('aria-expanded', 'false');
+        button.addEventListener('click', () => {
+          const expanded = list.classList.toggle('is-expanded');
+          button.textContent = expanded ? 'Réduire' : 'Voir la suite';
+          button.setAttribute('aria-expanded', String(expanded));
+        });
+        list.after(button);
+      });
     });
 
     function showFullscreen(img) {

@@ -142,6 +142,26 @@
   margin-inline: auto !important;
 }
 
+#portfolio .portfolio-alt-card h3 {
+  margin-bottom: 12px;
+  color: #ff6b6b;
+  font-size: clamp(1.35rem, 3vw, 2rem);
+}
+
+#portfolio .portfolio-alt-card p {
+  max-width: 34ch;
+  margin-bottom: 20px;
+  color: #ccc;
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  line-height: 1.5;
+}
+
+#portfolio .portfolio-alt-card .alt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
 @media (max-width: 760px) {
   #portfolio .container { width: min(calc(100% - 28px), 560px); }
   #portfolio .container > .row:not(:first-child) { gap: 18px; margin-bottom: 18px; }
@@ -149,6 +169,54 @@
   #portfolio h2 { font-size: clamp(2.25rem, 10vw, 3.2rem); }
   #portfolio .portfolio-thumb { aspect-ratio: 4 / 3; }
   #portfolio .portfolio-alt-card { min-height: 210px; aspect-ratio: auto; }
+}
+
+@media (max-width: 480px) {
+  #portfolio .portfolio-alt-card {
+    min-height: 0;
+    padding: 22px 18px;
+  }
+
+  #portfolio .portfolio-alt-card h3 {
+    margin: 0 0 8px;
+    font-size: 1.25rem;
+  }
+
+  #portfolio .portfolio-alt-card p {
+    max-width: 28ch;
+    margin: 0 auto 16px !important;
+    font-size: .95rem;
+    line-height: 1.45;
+  }
+
+  #portfolio .portfolio-alt-card .alt-btn {
+    min-height: 40px;
+    width: auto;
+    padding: 9px 22px;
+    font-size: .88rem;
+  }
+
+  #zoom .container { width: calc(100% - 32px); }
+
+  #zoom h2 {
+    max-width: 15ch;
+    margin: 0 0 22px;
+    font-size: clamp(1.75rem, 8.5vw, 2.15rem);
+    line-height: 1.08;
+    letter-spacing: -.025em;
+  }
+
+  #zoom h3 {
+    margin: 0 0 10px;
+    font-size: clamp(1.15rem, 5.8vw, 1.4rem);
+    line-height: 1.2;
+  }
+
+  #zoom p,
+  #zoom li {
+    font-size: .95rem;
+    line-height: 1.55;
+  }
 }
 
 /* Copyright RZU Informatique */
