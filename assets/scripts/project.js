@@ -11,8 +11,9 @@ document.addEventListener('DOMContentLoaded', function() {
           const rect = this.getBoundingClientRect();
 
           tooltip.style.display = 'block';
-          tooltip.style.left = `${rect.left + window.scrollX}px`;
-          tooltip.style.top = `${rect.bottom + window.scrollY + 5}px`;
+          tooltip.style.position = 'fixed';
+          tooltip.style.left = `${Math.max(12, Math.min(rect.left, window.innerWidth - 312))}px`;
+          tooltip.style.top = `${Math.min(rect.bottom + 8, window.innerHeight - 120)}px`;
           tooltip.innerHTML = title;
 
           setTimeout(() => {

@@ -294,3 +294,15 @@
 }
 
 /* Copyright RZU Informatique */
+
+@media (max-width: 760px) {
+  #portfolio .portfolio-thumb .portfolio-overlay,
+  #portfolio .portfolio-thumb:hover .portfolio-overlay {
+    align-items: flex-start !important;
+    justify-content: flex-end !important;
+    padding: 24px !important;
+    background: linear-gradient(180deg, rgba(7, 9, 11, .08) 18%, rgba(7, 9, 11, .94) 100%) !important;
+  }
+  #portfolio .portfolio-overlay h4 { font-size: 1.45rem !important; }
+  #portfolio .portfolio-overlay h5 { font-size: 1rem !important; line-height: 1.4; }
+}

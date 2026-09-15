@@ -221,3 +221,18 @@ body > section h2::after {
 }
 
 /* Copyright RZU Informatique */
+
+@media (max-width: 700px) {
+  body { width: min(calc(100% - 32px), 560px); }
+  section,
+  #intro { padding: 32px 0; text-align: center; }
+  body > section h2::after { margin: 14px auto 0; }
+  p,
+  li { font-size: 1.05rem !important; line-height: 1.72; }
+  ul,
+  .custom-checklist { width: min(100%, 500px); margin-inline: auto; text-align: left; }
+  .tool-group { display: grid; justify-items: center; text-align: center; }
+  .tool-group ul { width: 100%; grid-template-columns: repeat(2, minmax(0, 1fr)); text-align: center; }
+  .tool-group > img { margin-inline: auto; }
+  .gallery-caption { font-size: .98rem; }
+}
