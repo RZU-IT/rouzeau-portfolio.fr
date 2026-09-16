@@ -1,3 +1,7 @@
+html.restoring-scroll body {
+  visibility: hidden;
+}
+
 #portfolio {
   padding: clamp(80px, 9vw, 130px) 0;
   background: #171a1d;

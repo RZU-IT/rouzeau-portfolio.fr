@@ -18,4 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
+window.addEventListener("pageshow", function () {
+    window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+            document.documentElement.classList.remove("restoring-scroll");
+        });
+    });
+});
+
 // Copyright RZU Informatique
