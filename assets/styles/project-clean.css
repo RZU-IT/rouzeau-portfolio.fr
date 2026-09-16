@@ -33,6 +33,14 @@ h3,
 p,
 li { text-shadow: none !important; }
 
+h1,
+h2,
+h3 {
+  padding: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+}
+
 h1 {
   max-width: 20ch;
   margin: 0 0 22px;
@@ -234,18 +242,26 @@ section li abbr[data-title] { color: rgba(255, 255, 255, .84); }
   h1 {
     max-width: 16ch;
     margin-bottom: 18px;
-    font-size: clamp(1.85rem, 8.5vw, 2.25rem) !important;
+    font-size: clamp(1.75rem, 7.4vw, 2.1rem) !important;
     line-height: 1.08;
+    text-align: center;
   }
 
   h2 {
     margin-bottom: 13px;
-    font-size: clamp(1.22rem, 5.8vw, 1.48rem) !important;
+    font-size: clamp(1.15rem, 5.2vw, 1.38rem) !important;
+    line-height: 1.2;
+    text-align: center;
+  }
+
+  h3 {
+    font-size: clamp(1.05rem, 4.7vw, 1.22rem) !important;
+    line-height: 1.25;
   }
 
   p,
   li {
-    font-size: clamp(.9rem, 3.9vw, .98rem) !important;
+    font-size: clamp(.94rem, 3.9vw, 1rem) !important;
     line-height: 1.58;
   }
 
@@ -253,6 +269,8 @@ section li abbr[data-title] { color: rgba(255, 255, 255, .84); }
     width: 36px;
     height: 3px;
     margin-top: 11px;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   ul,
@@ -334,14 +352,14 @@ section li abbr[data-title] { color: rgba(255, 255, 255, .84); }
 
   h1 {
     max-width: 15ch;
-    font-size: clamp(1.68rem, 8.2vw, 1.9rem) !important;
+    font-size: clamp(1.62rem, 7.8vw, 1.82rem) !important;
   }
 
-  h2 { font-size: clamp(1.12rem, 5.6vw, 1.3rem) !important; }
+  h2 { font-size: clamp(1.08rem, 5.3vw, 1.24rem) !important; }
 
   p,
   li {
-    font-size: clamp(.84rem, 3.8vw, .92rem) !important;
+    font-size: clamp(.92rem, 3.8vw, .96rem) !important;
     line-height: 1.52;
   }
 }
