@@ -1,0 +1,113 @@
+/* University project website — original styles preserved and progressively maintained. */
+html { font-size: 16px; }
+
+#home p,
+#about p,
+#about li,
+#about span,
+#zoom p,
+#zoom li,
+#work p,
+#passions p,
+#bilan p {
+  font-size: var(--font-home-body) !important;
+}
+
+#about h2,
+#portfolio h2,
+#zoom h2,
+#work h2,
+#passions h2,
+#bilan h2 {
+  font-size: var(--font-home-section-title);
+}
+
+#home .rotate { font-size: var(--font-home-subtitle); }
+
+#about h3,
+#zoom h3,
+#work h3,
+#passions h3,
+#bilan h3,
+#work .media .media-heading {
+  font-size: var(--font-home-subtitle);
+}
+
+#zoom h4,
+#work h4,
+#passions h4,
+#bilan h4 {
+  font-size: var(--font-home-minor-title);
+}
+
+@media (max-width: 768px) {
+  #home h1 {
+    font-size: clamp(2.15rem, 9vw, 2.8rem) !important;
+    line-height: 1.08;
+  }
+
+  #home .portfolio-typewriter {
+    font-size: 1.3rem !important;
+  }
+
+  #home .static-tt {
+    font-size: 1rem !important;
+    line-height: 1.35;
+  }
+
+  #home p,
+  #about p,
+  #about li,
+  #about span,
+  #zoom p,
+  #zoom li,
+  #work p,
+  #passions p,
+  #bilan p {
+    font-size: var(--font-home-body-mobile) !important;
+    line-height: 1.7 !important;
+  }
+
+  #about h2,
+  #portfolio h2,
+  #zoom h2,
+  #work h2,
+  #passions h2,
+  #bilan h2 {
+    font-size: var(--font-home-section-title-mobile) !important;
+  }
+
+  #home .rotate { font-size: var(--font-home-subtitle-mobile) !important; }
+
+  #about h3,
+  #zoom h3,
+  #work h3,
+  #passions h3,
+  #bilan h3,
+  #work .media .media-heading {
+    font-size: var(--font-home-subtitle-mobile) !important;
+  }
+
+  #zoom h4,
+  #work h4,
+  #passions h4,
+  #bilan h4 {
+    font-size: var(--font-home-minor-title-mobile) !important;
+  }
+}
+
+@media (max-width: 380px) {
+  #home p,
+  #about p,
+  #about li,
+  #about span,
+  #zoom p,
+  #zoom li,
+  #work p,
+  #passions p,
+  #bilan p {
+    font-size: var(--font-home-body-mini) !important;
+  }
+}
+
+/* Copyright RZU Informatique */

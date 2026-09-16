@@ -1,3 +1,4 @@
+/* University project website — original styles preserved and progressively maintained. */
 body {
   width: min(calc(100% - 40px), 1180px);
   margin: 0 auto;
@@ -44,25 +45,21 @@ h3 {
 h1 {
   max-width: 20ch;
   margin: 0 0 22px;
-  font-size: clamp(2.35rem, 4.6vw, 3.75rem) !important;
   line-height: 1.04;
   overflow-wrap: anywhere;
 }
 
 h2 {
   margin: 0 0 16px;
-  font-size: clamp(1.45rem, 2.2vw, 1.85rem) !important;
   line-height: 1.2;
 }
 
 h3 {
   margin: 18px 0 9px;
-  font-size: clamp(1.15rem, 1.7vw, 1.4rem) !important;
 }
 
 p,
 li {
-  font-size: clamp(.98rem, 1.15vw, 1.06rem) !important;
   line-height: 1.72;
 }
 
@@ -235,34 +232,35 @@ section li abbr[data-title] { color: rgba(255, 255, 255, .84); }
   body { width: min(calc(100% - 28px), 560px); }
 
   section,
-  #intro { padding: 25px 0; text-align: center; }
+  #intro { padding: 36px 0; text-align: center; }
 
   #intro { padding-top: 42px; }
 
   h1 {
     max-width: 16ch;
     margin-bottom: 18px;
-    font-size: clamp(1.75rem, 7.4vw, 2.1rem) !important;
     line-height: 1.08;
     text-align: center;
   }
 
   h2 {
     margin-bottom: 13px;
-    font-size: clamp(1.15rem, 5.2vw, 1.38rem) !important;
     line-height: 1.2;
     text-align: center;
   }
 
   h3 {
-    font-size: clamp(1.05rem, 4.7vw, 1.22rem) !important;
     line-height: 1.25;
   }
 
-  p,
+  p {
+    margin-bottom: 15px;
+    line-height: 1.72;
+  }
+
   li {
-    font-size: clamp(.94rem, 3.9vw, 1rem) !important;
-    line-height: 1.58;
+    margin-bottom: 10px;
+    line-height: 1.65;
   }
 
   body > section h2::after {
@@ -346,22 +344,16 @@ section li abbr[data-title] { color: rgba(255, 255, 255, .84); }
   body { width: calc(100% - 24px); }
 
   section,
-  #intro { padding: 21px 0; }
+  #intro { padding: 30px 0; }
 
   #intro { padding-top: 34px; }
 
   h1 {
     max-width: 15ch;
-    font-size: clamp(1.62rem, 7.8vw, 1.82rem) !important;
   }
 
-  h2 { font-size: clamp(1.08rem, 5.3vw, 1.24rem) !important; }
-
-  p,
-  li {
-    font-size: clamp(.92rem, 3.8vw, .96rem) !important;
-    line-height: 1.52;
-  }
+  p { line-height: 1.68; }
+  li { line-height: 1.62; }
 }
 
 /* Copyright RZU Informatique */

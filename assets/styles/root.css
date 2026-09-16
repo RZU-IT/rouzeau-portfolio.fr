@@ -1,3 +1,6 @@
+/* University project website — original styles preserved and progressively maintained. */
+html { -webkit-tap-highlight-color: transparent; }
+
 :root {
     --color-black: #000000;
     --color-project-bg: #121212;
@@ -11,6 +14,24 @@
     --color-accent-hover: #b92f43;
     --color-accent-light: #ff5f7f;
     --color-java-accent: #FF6B6B;
+    --font-home-body: 1.1rem;
+    --font-home-body-mobile: 1.05rem;
+    --font-home-body-mini: 1rem;
+    --font-project-body: 1rem;
+    --font-project-body-mobile: .95rem;
+    --font-project-body-mini: .9rem;
+    --font-home-section-title: clamp(2rem, 3vw, 2.75rem);
+    --font-home-section-title-mobile: clamp(1.95rem, 7.2vw, 2.45rem);
+    --font-home-subtitle: clamp(1.25rem, 2vw, 1.65rem);
+    --font-home-subtitle-mobile: clamp(1.18rem, 4.8vw, 1.42rem);
+    --font-home-minor-title: clamp(1.1rem, 1.7vw, 1.35rem);
+    --font-home-minor-title-mobile: clamp(1.08rem, 4.3vw, 1.28rem);
+    --font-project-title: clamp(2.35rem, 4.6vw, 3.75rem);
+    --font-project-heading: clamp(1.45rem, 2.2vw, 1.85rem);
+    --font-project-subtitle: clamp(1.15rem, 1.7vw, 1.4rem);
+    --font-project-title-mobile: clamp(1.9rem, 8vw, 2.3rem);
+    --font-project-heading-mobile: clamp(1.32rem, 5.7vw, 1.55rem);
+    --font-project-subtitle-mobile: clamp(1.12rem, 4.9vw, 1.32rem);
 }
 
 /* Copyright RZU Informatique */

@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- University project website — original structure preserved and progressively maintained. -->
 <html lang="fr">
 <head>
     <meta charset="utf-8">
@@ -31,7 +32,7 @@
         }
     </script>
 
-    <link rel="stylesheet" href="assets/styles/root.css">
+    <link rel="stylesheet" href="assets/styles/root.css?v=6">
 
     <link rel="stylesheet" href="assets/styles/bootstrap.min.css">
 
@@ -39,11 +40,13 @@
 
     <link href="https://fonts.googleapis.com/css?family=Raleway:400,300,700,800" rel="stylesheet">
     <link rel="stylesheet" href="assets/styles/style.css">
-    <link rel="stylesheet" href="assets/styles/responsive.css">
+    <link rel="stylesheet" href="assets/styles/responsive.css?v=5">
 
     <link rel="stylesheet" href="assets/styles/index.css?v=2">
     <link rel="stylesheet" href="assets/styles/portfolio-refresh.css?v=6">
-    <link rel="stylesheet" href="assets/styles/home-responsive.css?v=1">
+    <link rel="stylesheet" href="assets/styles/home-responsive.css?v=10">
+    <link rel="stylesheet" href="assets/styles/font-size-home.css?v=4">
+    <link rel="stylesheet" href="assets/styles/font-size-menu.css?v=2">
 </head>
 <body>
 
@@ -64,13 +67,17 @@
                 <div class="row">
                     <div class="col-md-2"></div>
                     <div class="col-md-8 wow fadeIn" data-wow-delay="0.9s">
-                        <h3>Mon Portfolio..</h3>
+                        <h3 class="portfolio-typewriter" data-text="Mon Portfolio..">Mon Portfolio..</h3>
                         <h1>Rouzeau Arthur</h1>
 
                         <h3 class="rotate">RÉSEAUX & SYSTÈMES, DÉVELOPPEMENT & ANALYSE, CYBERSÉCURITÉ & RECHERCHE, SKATEBOARD & MAGIE</h3>
                         <h3 class="static-tt">RÉSEAUX & SYSTÈMES, DÉVELOPPEMENT & ANALYSE, CYBERSÉCURITÉ & RECHERCHE, SKATEBOARD & MAGIE</h3>
 
-                        <p style="color: white; background-color: rgba(0, 0, 0, 0.5);">Passionné principalement par la magie et l'informatique.
+                        <button class="hero-intro-toggle" type="button" aria-expanded="false" aria-controls="hero-intro-text">
+                            <span>Découvrir mon profil</span>
+                            <span class="hero-intro-toggle-icon" aria-hidden="true"></span>
+                        </button>
+                        <p id="hero-intro-text" class="hero-intro-text">Passionné principalement par la magie et l'informatique.
                         <br>Deux mondes d'apparence très éloignés, mais pourtant bien plus proches que l'on ne le pense.
                         <br>Ce sont deux univers très différents de notre monde. Deux univers remplis de mystères.
                         <br>Mon but dans la vie est de faire en sorte que mes deux passions
@@ -158,7 +165,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_net.html">
+                        <a id="card-proj-net" href="proj_net.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/router.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -169,7 +176,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_prog.html">
+                        <a id="card-proj-prog" href="proj_prog.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/prog.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -182,7 +189,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_init.html">
+                        <a id="card-proj-init" href="proj_init.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/hacked.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -193,7 +200,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_cyber.html">
+                        <a id="card-proj-cyber" href="proj_cyber.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/world.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -206,7 +213,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_arch.html">
+                        <a id="card-proj-arch" href="proj_arch.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/arch.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -217,7 +224,7 @@
                         </a>
                     </div>
                     <div class="col-md-6 col-xs-12">
-                        <a href="proj_java.html">
+                        <a id="card-proj-java" href="proj_java.html">
                             <div class="portfolio-thumb">
                                 <img src="assets/images/java.png" class="img-responsive" alt="portfolio img">
                                 <div class="portfolio-overlay">
@@ -231,7 +238,7 @@
                 </div>
                 <div class="row">
                     <div class="col-md-12 col-xs-12">
-                        <a href="proj_alt.html" style="text-decoration: none;">
+                        <a id="card-proj-alt" href="proj_alt.html" style="text-decoration: none;">
                             <div class="portfolio-thumb portfolio-alt-card">
                                 <h3>ALTERNANCE</h3>
                                 <p>
@@ -251,7 +258,7 @@
 
             <div class="col-md-6 col-xs-12 wow fadeInLeft" data-wow-delay="0.9s">
                 <h2 style="margin-top: 0.1px;">ZOOM SUR DEUX EXPÉRIENCES</h2>
-                <h3>🔌 Raccordeur fibre optique</h3>
+                <h3><i class="fa fa-plug heading-icon" aria-hidden="true"></i>Raccordeur fibre optique</h3>
                 <p>
                 <strong>Câblage – Installation – Raccordement</strong><br>
                 <strong>Intervention sur le terrain</strong> chez un auto-entrepreneur à Brignais (38), pour installer et raccorder
@@ -273,7 +280,7 @@
             <br/><br/><br/><br/>
 
             <div class="col-md-6 col-xs-12 wow fadeInRight" data-wow-delay="0.9s">
-                <h3>🧠 Concepteur d’IHM pour automates</h3>
+                <h3><i class="fa fa-lightbulb-o heading-icon" aria-hidden="true"></i>Concepteur d’IHM pour automates</h3>
                 <p>
                 Au sein d'une entreprise spécialisée en automatisation industrielle à Lyon (38), j'ai participé à la création
                 d'<strong>interfaces graphiques mobiles</strong> pour piloter des automates de cuves à vin.
@@ -449,7 +456,7 @@
             <div class="row">
             <div class="col-md-12 wow fadeInUp" data-wow-delay="0.5s">
                 <br/>
-                <h2 style="color: #ffffff; border-bottom: 2px solid #D43F52; padding-bottom: 10px; margin-bottom: 40px;">💻 Mon Bilan Professionnel</h2>
+                <h2 style="color: #ffffff; border-bottom: 2px solid #D43F52; padding-bottom: 10px; margin-bottom: 40px;"><i class="fa fa-laptop heading-icon" aria-hidden="true"></i>Mon Bilan Professionnel</h2>
 
                 <div style="margin-bottom: 35px;">
                 <h3 style="color: #ffffff; margin-bottom: 15px;">Réseaux et Télécommunications</h3>
@@ -528,17 +535,17 @@
         </footer>
     </div>
 
-    <script src="assets/scripts/custom.js"></script>
+    <script src="assets/scripts/custom.js?v=2"></script>
 
-    <script src="assets/scripts/observerTemplate.js"></script>
-    <script src="assets/scripts/aboutAnimation.core.js"></script>
-    <script src="assets/scripts/aboutAnimation.extra.js"></script>
+    <script src="assets/scripts/observerTemplate.js?v=2"></script>
+    <script src="assets/scripts/aboutAnimation.core.js?v=2"></script>
+    <script src="assets/scripts/aboutAnimation.extra.js?v=2"></script>
 
-    <script src="assets/scripts/homeAnimation.js"></script>
+    <script src="assets/scripts/homeAnimation.js?v=3"></script>
     <script src="assets/scripts/navigation.js?v=2"></script>
 
-    <script src="assets/scripts/workAnimation.js"></script>
-    <script src="assets/scripts/zoomAnimation.js"></script>
+    <script src="assets/scripts/workAnimation.js?v=2"></script>
+    <script src="assets/scripts/zoomAnimation.js?v=2"></script>
     <script src="assets/scripts/abbr-script.js"></script>
 
 </body>

@@ -1,3 +1,16 @@
-function observeSection(e,r){let t=document.querySelector(e);if(!t)return;let n=new IntersectionObserver((e,t)=>{e.forEach(e=>{e.isIntersecting&&(r(),t.unobserve(e.target))})},{threshold:.3});n.observe(t)}
+window.observeSection = window.observeSection || function observeSection(selector, callback) {
+    const section = document.querySelector(selector);
+    if (!section) return;
+
+    const observer = new IntersectionObserver((entries, currentObserver) => {
+        entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            callback();
+            currentObserver.unobserve(entry.target);
+        });
+    }, { threshold: 0.3 });
+
+    observer.observe(section);
+};
 
 // Copyright RZU Informatique

@@ -1,0 +1,38 @@
+/* University project website — original styles preserved and progressively maintained. */
+.skills-link,
+#home .btn,
+.portfolio-overlay h4,
+.portfolio-overlay h5,
+.alt-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1.35;
+  text-align: center;
+}
+
+#home .btn {
+  padding: 0 24px !important;
+  font-size: 1.1rem !important;
+}
+
+.skills-link {
+  min-height: 58px;
+  padding: 12px 24px !important;
+  font-size: 1.08rem !important;
+}
+
+@media (max-width: 768px) {
+  #home .btn { min-height: 58px; }
+  .alt-btn { font-size: 1rem; }
+
+  .portfolio-overlay h4 { font-size: 1.45rem !important; }
+  .portfolio-overlay h5 { font-size: 1rem !important; }
+}
+
+@media (max-width: 380px) {
+  #home .btn { min-height: 54px; font-size: 1.02rem !important; }
+  .skills-link { min-height: 54px; font-size: 1rem !important; }
+}
+
+/* Copyright RZU Informatique */

@@ -1,12 +1,14 @@
+/* University project website — original styles preserved and progressively maintained. */
 #zoom,
 #work,
+#about,
 #passions,
 #bilan {
-  font-size: 1rem;
 }
 
 #zoom .container,
 #work .container,
+#about .container,
 #passions .container,
 #bilan .container {
   width: min(calc(100% - 48px), 1120px);
@@ -16,7 +18,6 @@
 #work h2,
 #passions h2,
 #bilan h2 {
-  font-size: clamp(2.35rem, 4.2vw, 3.5rem);
   line-height: 1.08;
   letter-spacing: -.025em;
 }
@@ -25,7 +26,6 @@
 #work h3,
 #passions h3,
 #bilan h3 {
-  font-size: clamp(1.25rem, 2vw, 1.65rem);
   line-height: 1.25;
 }
 
@@ -33,22 +33,171 @@
 #work h4,
 #passions h4,
 #bilan h4 {
-  font-size: clamp(1.1rem, 1.7vw, 1.35rem);
   line-height: 1.3;
 }
 
 #zoom p,
 #zoom li,
 #work p,
+#about p,
+#about li,
+#about span,
 #passions p,
 #bilan p {
-  font-size: clamp(1rem, 1.25vw, 1.1rem);
   line-height: 1.65;
 }
 
+.portfolio-typewriter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 1.5em;
+}
+
+.portfolio-typewriter-text { white-space: pre; }
+
+#home .rotate {
+  min-height: 1.45em;
+  line-height: 1.35;
+}
+
+.hero-intro-text {
+  color: var(--color-white);
+  background: rgba(0, 0, 0, .5);
+}
+
+.hero-intro-toggle { display: none; }
+
+@media (max-width: 900px), (max-height: 720px) {
+  .hero-intro-toggle.is-ready {
+    display: inline-flex;
+    min-height: 46px;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    margin: 20px auto 16px;
+    padding: 11px 18px;
+    border: 1px solid rgba(255, 255, 255, .5);
+    border-radius: 999px;
+    color: var(--color-white);
+    background: rgba(10, 10, 12, .58);
+    box-shadow: 0 10px 28px rgba(0, 0, 0, .22);
+    font: inherit;
+    font-size: .95rem;
+    font-weight: 700;
+    cursor: pointer;
+    backdrop-filter: blur(8px);
+  }
+
+  .hero-intro-toggle-icon {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    flex: 0 0 18px;
+    border: 1px solid rgba(255, 255, 255, .55);
+    border-radius: 50%;
+    transition: transform .35s ease, background-color .35s ease;
+  }
+
+  .hero-intro-toggle-icon::before,
+  .hero-intro-toggle-icon::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 8px;
+    height: 1px;
+    background: currentColor;
+    transform: translate(-50%, -50%);
+  }
+
+  .hero-intro-toggle-icon::after { transform: translate(-50%, -50%) rotate(90deg); }
+
+  .hero-intro-toggle[aria-expanded="true"] .hero-intro-toggle-icon {
+    background: var(--color-accent);
+    transform: rotate(45deg);
+  }
+
+  #home .hero-intro-text.is-collapsible {
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    overflow: hidden;
+    opacity: 0;
+    background: transparent;
+    transform: translateY(-10px);
+    transition: max-height .6s ease, margin .4s ease, padding .4s ease, opacity .35s ease, transform .45s ease, background-color .4s ease;
+  }
+
+  #home .hero-intro-text.is-open {
+    max-height: 520px;
+    margin-top: 0;
+    margin-bottom: 20px;
+    padding-top: 16px;
+    padding-bottom: 16px;
+    opacity: 1;
+    background: rgba(0, 0, 0, .5);
+    transform: translateY(0);
+  }
+}
+
+.portfolio-ruby-cursor {
+  width: 1.05em;
+  height: 1.05em;
+  margin-left: .18em;
+  object-fit: contain;
+  transform-origin: 50% 70%;
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, .4));
+}
+
+.portfolio-ruby-cursor.is-typing { animation: ruby-cursor-pulse .42s ease-in-out; }
+.portfolio-ruby-cursor.is-launching { animation: ruby-cursor-launch .85s cubic-bezier(.2, .75, .3, 1) forwards; }
+
+@keyframes ruby-cursor-pulse {
+  50% { transform: translateY(-.13em) rotate(9deg) scale(1.08); }
+}
+
+@keyframes ruby-cursor-launch {
+  0% { opacity: 1; transform: translate(0, 0) rotate(0) scale(1); }
+  45% { opacity: 1; transform: translate(.32em, -.8em) rotate(150deg) scale(1.2); }
+  100% { opacity: 0; transform: translate(1.2em, .55em) rotate(420deg) scale(.2); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-ruby-cursor { animation: none !important; }
+}
+
 @media (max-width: 768px) {
+  .soft-skills ul {
+    width: min(100%, 520px);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8px 22px;
+    margin-inline: auto;
+  }
+
+  .soft-skills ul li {
+    min-height: 0;
+    justify-content: flex-start;
+    padding: 10px 6px 10px 20px;
+    border: 0;
+    border-bottom: 1px solid rgba(212, 63, 82, .2);
+    border-radius: 0;
+    background: transparent;
+    text-align: left;
+  }
+
+  .soft-skills ul li::before {
+    display: block;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
   #zoom,
   #work,
+  #about,
   #passions,
   #bilan {
     padding: 68px 0 !important;
@@ -56,6 +205,7 @@
 
   #zoom .container,
   #work .container,
+  #about .container,
   #passions .container,
   #bilan .container {
     width: min(calc(100% - 32px), 620px);
@@ -70,7 +220,6 @@
     margin: 0 auto 34px !important;
     padding: 0;
     max-width: 16ch;
-    font-size: clamp(2rem, 8vw, 2.55rem);
     line-height: 1.08;
     text-align: center;
   }
@@ -80,7 +229,6 @@
   #passions h3,
   #bilan h3 {
     margin-top: 0;
-    font-size: clamp(1.25rem, 5.4vw, 1.5rem);
     line-height: 1.25;
   }
 
@@ -88,17 +236,19 @@
   #work h4,
   #passions h4,
   #bilan h4 {
-    font-size: clamp(1.15rem, 5vw, 1.35rem);
     line-height: 1.3;
   }
 
   #zoom p,
   #zoom li,
   #work p,
+  #about p,
+  #about li,
+  #about span,
   #passions p,
   #bilan p {
-    font-size: 1rem !important;
-    line-height: 1.65 !important;
+    line-height: 1.7 !important;
+    color: #c9c9c9;
   }
 
   #zoom .row > br {
@@ -173,13 +323,12 @@
   #work .media .media-heading {
     margin: 0 0 10px;
     padding: 0;
-    font-size: clamp(1.2rem, 5.3vw, 1.45rem);
     text-align: left;
   }
 
   #work .media p {
     margin: 0;
-    color: #aaa;
+    color: #c9c9c9;
   }
 
   #passions {
@@ -226,8 +375,14 @@
 }
 
 @media (max-width: 380px) {
+  .soft-skills ul {
+    grid-template-columns: 1fr;
+    gap: 4px;
+  }
+
   #zoom,
   #work,
+  #about,
   #passions,
   #bilan {
     padding: 58px 0 !important;
@@ -235,6 +390,7 @@
 
   #zoom .container,
   #work .container,
+  #about .container,
   #passions .container,
   #bilan .container {
     width: min(calc(100% - 24px), 620px);
@@ -244,15 +400,17 @@
   #work h2,
   #passions h2,
   #bilan h2 {
-    font-size: clamp(1.85rem, 8.5vw, 2.15rem);
   }
 
   #zoom p,
   #zoom li,
   #work p,
+  #about p,
+  #about li,
+  #about span,
   #passions p,
   #bilan p {
-    font-size: .97rem !important;
+    line-height: 1.62 !important;
   }
 
   #work .media {

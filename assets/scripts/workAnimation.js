@@ -1,3 +1,36 @@
-document.addEventListener("DOMContentLoaded",()=>{let t=document.querySelectorAll("#work .media");t.forEach((t,e)=>{let a=t.querySelector("i"),l=t.querySelector(".media-body");a.style.opacity=0,a.style.transform="translateY(-50px) scale(0.5)",a.style.transition="all 0.6s ease-out",l.style.opacity=0;let s=e%2==0?"-40px":"40px";l.style.transform=`translateX(${s})`,l.style.transition="all 0.6s ease-out",setTimeout(()=>{a.style.opacity=1,a.style.transform="translateY(0) scale(1.2)",setTimeout(()=>{a.style.transform="translateY(0) scale(1)"},300),l.style.opacity=1,l.style.transform="translateX(0)"},300+200*e)})});
+document.addEventListener("DOMContentLoaded", () => {
+    const cards = [...document.querySelectorAll("#work .media")];
+
+    cards.forEach((card, index) => {
+        const icon = card.querySelector("i");
+        const body = card.querySelector(".media-body");
+        if (!icon || !body) return;
+
+        icon.style.opacity = "0";
+        icon.style.transform = "translateY(-50px) scale(0.5)";
+        icon.style.transition = "all 0.6s ease-out";
+        body.style.opacity = "0";
+        body.style.transform = `translateX(${index % 2 === 0 ? "-40px" : "40px"})`;
+        body.style.transition = "all 0.6s ease-out";
+    });
+
+    observeSection("#work", () => {
+        cards.forEach((card, index) => {
+            const icon = card.querySelector("i");
+            const body = card.querySelector(".media-body");
+            if (!icon || !body) return;
+
+            window.setTimeout(() => {
+                icon.style.opacity = "1";
+                icon.style.transform = "translateY(0) scale(1.2)";
+                body.style.opacity = "1";
+                body.style.transform = "translateX(0)";
+                window.setTimeout(() => {
+                    icon.style.transform = "translateY(0) scale(1)";
+                }, 300);
+            }, 180 + 150 * index);
+        });
+    });
+});
 
 // Copyright RZU Informatique

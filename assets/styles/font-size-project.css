@@ -1,0 +1,25 @@
+/* University project website — original styles preserved and progressively maintained. */
+h1 { font-size: var(--font-project-title) !important; }
+h2 { font-size: var(--font-project-heading) !important; }
+h3 { font-size: var(--font-project-subtitle) !important; }
+
+p,
+li {
+  font-size: var(--font-project-body) !important;
+  line-height: 1.72;
+}
+
+@media (max-width: 700px) {
+  h1 { font-size: var(--font-project-title-mobile) !important; }
+  h2 { font-size: var(--font-project-heading-mobile) !important; }
+  h3 { font-size: var(--font-project-subtitle-mobile) !important; }
+  p,
+  li { font-size: var(--font-project-body-mobile) !important; }
+}
+
+@media (max-width: 380px) {
+  p,
+  li { font-size: var(--font-project-body-mini) !important; }
+}
+
+/* Copyright RZU Informatique */
