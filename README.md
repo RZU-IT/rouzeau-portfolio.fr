@@ -1,6 +1,6 @@
-# Portfolio — Arthur Rouzeau
+# Portfolio — Arthur Rouzeau (old)
 
-Portfolio technique consacré au réseau, à la sécurité et au développement. Il rassemble le parcours, les projets et leurs supports visuels.
+Ancienne version du portfolio technique, conservée pour consultation. Elle présente le parcours, les projets réseau, sécurité et développement, ainsi que leurs supports visuels.
 
 [Consulter le portfolio](https://rzu-it.github.io/rouzeau-portfolio.fr/)
 
