@@ -4,6 +4,8 @@ Portfolio technique consacré au réseau, à la sécurité et au développement.
 
 [Consulter le portfolio](https://rzu-it.github.io/rouzeau-portfolio.fr/)
 
+![Vue urbaine du portfolio](assets/images/home-bg.png)
+
 ## Contenu
 
 `index.html` présente le parcours et les travaux. `cv.html` contient le CV. Les pages `proj_*.html` détaillent les projets ; leurs styles, scripts et illustrations sont dans `assets/`.
