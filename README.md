@@ -2,6 +2,8 @@
 
 Ancien portfolio technique, conservé pour consultation : réseau, sécurité et développement.
 
+Réalisé en première année de mon cursus bac +3, puis mis à jour au fil du temps, sans revue de code globale.
+
 [Voir le site](https://rzu-it.github.io/rouzeau-portfolio.fr/)
 
 ![Portfolio — Arthur Rouzeau (old)](assets/images/home-bg.png)
