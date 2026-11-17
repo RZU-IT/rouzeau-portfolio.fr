@@ -1,31 +1,21 @@
 # Portfolio — Arthur Rouzeau (old)
 
-Ancienne version du portfolio technique, conservée pour consultation. Elle présente le parcours, les projets réseau, sécurité et développement, ainsi que leurs supports visuels.
+Ancien portfolio technique, conservé pour consultation : réseau, sécurité et développement.
 
-[Consulter le portfolio](https://rzu-it.github.io/rouzeau-portfolio.fr/)
+[Voir le site](https://rzu-it.github.io/rouzeau-portfolio.fr/)
 
-![Vue urbaine du portfolio](assets/images/home-bg.png)
+![Portfolio — Arthur Rouzeau (old)](assets/images/home-bg.png)
 
-## Contenu
+HTML, CSS et JavaScript. 
 
-`index.html` présente le parcours et les travaux. `cv.html` contient le CV. Les pages `proj_*.html` détaillent les projets ; leurs styles, scripts et illustrations sont dans `assets/`.
-
-Le site utilise HTML, CSS et JavaScript. Aucun outil de compilation n'est nécessaire.
-
-## Ouvrir en local
-
-Depuis la racine du dépôt, avec Python installé :
+## En local
 
 ```sh
 python -m http.server 8000 --bind 127.0.0.1
 ```
 
-Ouvrir <http://127.0.0.1:8000/>. Le dépôt est publié comme site statique sur GitHub Pages.
+Ouvrir http://127.0.0.1:8000/ depuis la racine du dépôt.
 
-Réalisation RZU Informatique.
+## Droits
 
-## Consultation et réutilisation
-
-Ce site est une démonstration réalisée par **RZU Informatique**. Vous pouvez le consulter et explorer les sources. Pour reprendre le code, le design ou les contenus dans un autre projet, merci de demander une autorisation préalable.
-
-Les éléments tiers conservent leurs droits et licences respectifs.
+Ce site est une démonstration de RZU Informatique. Consultation des sources autorisée ; merci de demander une autorisation avant de réutiliser le code, le design ou les contenus. Les éléments tiers conservent leurs droits et licences.
